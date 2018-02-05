@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,8 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ch.bbcag.ch.ConnectionFactory;
+import ch.bbcag.ch.User.*;
+
 public class LoginView extends JFrame {
-	
+
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Login");
 		JTextField userName = new JTextField();
@@ -22,6 +26,9 @@ public class LoginView extends JFrame {
 		JTextField test = new JTextField();
 		JLabel title = new JLabel("Login");
 		JButton senden = new JButton("Senden");
+		User u = new User();
+		Connection con = ConnectionFactory.getInstance().getConnection();
+		UserDao ud = new UserJDBCDao(con);
 		
 		title.setFont(new Font("Arial", Font.BOLD, 40));
 		userName.setBounds(130, 120, 200, 30);
@@ -33,11 +40,31 @@ public class LoginView extends JFrame {
 		senden.setBackground(Color.gray);
 		
 		senden.addActionListener(new ActionListener() {
+			@SuppressWarnings("unlikely-arg-type")
 			public void actionPerformed(ActionEvent e) {
-				// TODO: Fix me
-				if (true){
-					System.out.println("Test");
+				for (User user : ud.getAllUsers()) {
+					
+					if(userName.getText().equals(user.getUsername())){
+						System.out.println(user.getPassword().trim());
+						System.out.println(password.getPassword());
+						System.out.println(user.getPassword().trim().length());
+						System.out.println(password.getPassword().length);
+						char[] formPassword = password.getPassword();
+						String dbPassword = user.getPassword().trim();
+						if(dbPassword.equals(new String(formPassword))) {
+							test.setText("True");
+						}
+						else {
+							test.setText("Falsches Passwort");
+						}
+					}
+					else {
+						test.setText("Falscher User");
+						
 				}
+				
+				ConnectionFactory.getInstance().closeConnection();
+			}
 			}
 		});
 		test.setBounds(10, 10, 200, 20);
@@ -57,7 +84,8 @@ public class LoginView extends JFrame {
 		f.setVisible(true);
 		
 	}
+
 	public LoginView() {
-		
+
 	}
 }
