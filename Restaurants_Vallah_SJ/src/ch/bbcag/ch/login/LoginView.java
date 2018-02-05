@@ -60,5 +60,4 @@ public class LoginView extends JFrame {
 	public LoginView() {
 		
 	}
-	..
 }
