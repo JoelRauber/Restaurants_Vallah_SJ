@@ -34,7 +34,10 @@ public class LoginView extends JFrame {
 		
 		senden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				test.setText(" " + userName.getText());
+				// TODO: Fix me
+				if (true){
+					System.out.println("Test");
+				}
 			}
 		});
 		test.setBounds(10, 10, 200, 20);

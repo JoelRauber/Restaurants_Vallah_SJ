@@ -61,8 +61,9 @@ public class User {
 		result += "****************User "+ getId() + "****************\n\n";
 		result += "Id: " + getId() + "\n";
 		result += "Vorname: " + getVorname() + "\n";
-		result += "Name: " +getEmail() + "\n";
-		result += "E-Mail: " + getUsername() + "\n";
+		result += "Name: " +getName() + "\n";
+		result += "E-Mail: " + getEmail() + "\n";
+		result += "Username: " + getUsername() + "\n";
 		result += "Password: " + getPassword() + "\n\n" ;
 		result += "**************************************\n";
 		return result;
