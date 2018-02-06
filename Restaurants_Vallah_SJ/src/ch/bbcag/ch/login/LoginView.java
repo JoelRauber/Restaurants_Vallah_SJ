@@ -17,6 +17,11 @@ import ch.bbcag.ch.User.*;
 
 public class LoginView extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Login");
 		JTextField userName = new JTextField();
@@ -56,7 +61,7 @@ public class LoginView extends JFrame {
 						char[] formPassword = password.getPassword();
 						String dbPassword = user.getPassword().trim();
 						if (dbPassword.equals(new String(formPassword))) {
-							fehler.setText("True");
+							// TODO zum Haupt-GUI
 						} else {
 							fehler.setText("Falsches Passwort");
 						}
@@ -66,7 +71,7 @@ public class LoginView extends JFrame {
 					}
 
 					ConnectionFactory.getInstance().closeConnection();
-				}
+				} 
 			}
 		});
 
