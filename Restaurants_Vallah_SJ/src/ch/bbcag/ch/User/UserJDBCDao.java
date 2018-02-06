@@ -7,23 +7,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class UserJDBCDao implements UserDao {
-	
+
 	private Connection con = null;
-	
+
 	public UserJDBCDao(Connection connection) {
 		con = connection;
 	}
-	
-	public List<User> getAllUsers(){
+
+	public List<User> getAllUsers() {
+		ResultSet rs;
 		try {
 			List<User> users = new ArrayList<User>();
 			User u = null;
 			String sql = "SELECT * from user";
 			PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			
+			rs = ps.executeQuery();
+
 			while (rs.next()) {
 				u = new User();
 				u.setId(rs.getInt("id"));
@@ -34,10 +34,11 @@ public class UserJDBCDao implements UserDao {
 				u.setPassword(rs.getString("passwort"));
 				users.add(u);
 			}
+			rs.close();
+			con.close();
 			return users;
 		} catch (SQLException ex) {
 			throw new RuntimeException(ex);
 		}
-		}
 	}
-
+}
