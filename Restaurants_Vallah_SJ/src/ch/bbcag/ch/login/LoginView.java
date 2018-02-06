@@ -23,13 +23,13 @@ public class LoginView extends JFrame {
 		JPasswordField password = new JPasswordField();
 		JLabel lPassword = new JLabel("Password: ");
 		JLabel lUserName = new JLabel("Username: ");
-		JTextField test = new JTextField();
+		JTextField fehler = new JTextField();
 		JLabel title = new JLabel("Login");
 		JButton senden = new JButton("Senden");
 		User u = new User();
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		UserDao ud = new UserJDBCDao(con);
-		
+
 		title.setFont(new Font("Arial", Font.BOLD, 40));
 		userName.setBounds(130, 120, 200, 30);
 		password.setBounds(130, 170, 200, 30);
@@ -37,52 +37,52 @@ public class LoginView extends JFrame {
 		lPassword.setBounds(50, 170, 200, 30);
 		title.setBounds(130, 10, 200, 100);
 		senden.setBounds(130, 220, 200, 30);
+		fehler.setBounds(130, 270, 200, 30);
+		fehler.setBorder(null);
+		fehler.setBackground(new Color(238, 238, 238));
+		fehler.setEditable(false);
+		fehler.setForeground(Color.red);
 		senden.setBackground(Color.gray);
-		
+
 		senden.addActionListener(new ActionListener() {
-			@SuppressWarnings("unlikely-arg-type")
 			public void actionPerformed(ActionEvent e) {
 				for (User user : ud.getAllUsers()) {
-					
-					if(userName.getText().equals(user.getUsername())){
+
+					if (userName.getText().equals(user.getUsername())) {
 						System.out.println(user.getPassword().trim());
 						System.out.println(password.getPassword());
 						System.out.println(user.getPassword().trim().length());
 						System.out.println(password.getPassword().length);
 						char[] formPassword = password.getPassword();
 						String dbPassword = user.getPassword().trim();
-						if(dbPassword.equals(new String(formPassword))) {
-							test.setText("True");
+						if (dbPassword.equals(new String(formPassword))) {
+							fehler.setText("True");
+						} else {
+							fehler.setText("Falsches Passwort");
 						}
-						else {
-							test.setText("Falsches Passwort");
-						}
+					} else {
+						fehler.setText("Falscher User");
+
 					}
-					else {
-						test.setText("Falscher User");
-						
+
+					ConnectionFactory.getInstance().closeConnection();
 				}
-				
-				ConnectionFactory.getInstance().closeConnection();
-			}
 			}
 		});
-		test.setBounds(10, 10, 200, 20);
-		
-		
+
 		f.add(lUserName);
 		f.add(lPassword);
 		f.add(userName);
 		f.add(password);
 		f.add(title);
 		f.add(senden);
-		
-		f.add(test);
-		
+
+		f.add(fehler);
+
 		f.setSize(400, 400);
 		f.setLayout(null);
 		f.setVisible(true);
-		
+
 	}
 
 	public LoginView() {
