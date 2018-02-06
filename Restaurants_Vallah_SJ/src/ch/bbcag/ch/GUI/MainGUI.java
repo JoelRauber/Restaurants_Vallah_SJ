@@ -52,7 +52,6 @@ public class MainGUI extends JFrame {
 	private JTextField spanisch = new JTextField("--> Spanisch");
 	private JTextField mexikanisch = new JTextField("--> Mexikanisch");
 	private JTextField tuerkisch = new JTextField("--> Tuerkisch");
-	
 
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
@@ -64,25 +63,24 @@ public class MainGUI extends JFrame {
 
 		toFront();
 
-		
-		while(true) {
+		for (int y = 0; y < 10; y++) {
 			for (int i = 0; i < 6; i++) {
-			JTextPane felder = new JTextPane();
-			felder.setText("Test");
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelAll.add(felder);
+				JTextPane felder = new JTextPane();
+				felder.setText("Test");
+				felder.setEditable(false);
+				felder.setBackground(new Color(238, 238, 238));
+				felder.setBorder(null);
+				contentPanelAll.add(felder);
+			}
 		}
 
 		titel.setBounds(550, 60, 550, 60);
-		titel.setFont(new Font("arial", Font.PLAIN, 60));
+		titel.setFont(new Font("arial" , Font.PLAIN, 60));
 		titel.setHorizontalAlignment(JTextField.CENTER);
 
 		panelHome.setBackground(Color.BLACK);
 
-//		JScrollPane scroll = new JScrollPane(contentPanelAsia);
-		
+		// JScrollPane scroll = new JScrollPane(contentPanelAsia);
 
 		asiatisch.setHorizontalAlignment(JTextField.CENTER);
 		asiatisch.setEditable(false);
@@ -90,70 +88,70 @@ public class MainGUI extends JFrame {
 		asiatisch.setBorder(null);
 
 		asiatisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		afrikanisch.setHorizontalAlignment(JTextField.CENTER);
 		afrikanisch.setEditable(false);
 		afrikanisch.setBackground(new Color(238, 238, 238));
 		afrikanisch.setBorder(null);
 
 		afrikanisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		amerikanisch.setHorizontalAlignment(JTextField.CENTER);
 		amerikanisch.setEditable(false);
 		amerikanisch.setBackground(new Color(238, 238, 238));
 		amerikanisch.setBorder(null);
 
 		amerikanisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		franzoesisch.setHorizontalAlignment(JTextField.CENTER);
 		franzoesisch.setEditable(false);
 		franzoesisch.setBackground(new Color(238, 238, 238));
 		franzoesisch.setBorder(null);
 
 		franzoesisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		indisch.setHorizontalAlignment(JTextField.CENTER);
 		indisch.setEditable(false);
 		indisch.setBackground(new Color(238, 238, 238));
 		indisch.setBorder(null);
 
 		indisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		italienisch.setHorizontalAlignment(JTextField.CENTER);
 		italienisch.setEditable(false);
 		italienisch.setBackground(new Color(238, 238, 238));
 		italienisch.setBorder(null);
 
 		italienisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		schweizerisch.setHorizontalAlignment(JTextField.CENTER);
 		schweizerisch.setEditable(false);
 		schweizerisch.setBackground(new Color(238, 238, 238));
 		schweizerisch.setBorder(null);
 
 		schweizerisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		spanisch.setHorizontalAlignment(JTextField.CENTER);
 		spanisch.setEditable(false);
 		spanisch.setBackground(new Color(238, 238, 238));
 		spanisch.setBorder(null);
 
 		spanisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		mexikanisch.setHorizontalAlignment(JTextField.CENTER);
 		mexikanisch.setEditable(false);
 		mexikanisch.setBackground(new Color(238, 238, 238));
 		mexikanisch.setBorder(null);
 
 		mexikanisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		tuerkisch.setHorizontalAlignment(JTextField.CENTER);
 		tuerkisch.setEditable(false);
 		tuerkisch.setBackground(new Color(238, 238, 238));
 		tuerkisch.setBorder(null);
 
 		tuerkisch.setFont(new Font("arial", Font.PLAIN, 35));
-		
+
 		text3.setFont(new Font("arial", Font.PLAIN, 22));
 		text3.setHorizontalAlignment(JTextField.CENTER);
 
@@ -167,7 +165,7 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(spanisch, BorderLayout.NORTH);
 		panelMexikanisch.add(mexikanisch, BorderLayout.NORTH);
 		panelTuerkisch.add(tuerkisch, BorderLayout.NORTH);
-		
+
 		panelAsiatisch.add(contentPanelAll, BorderLayout.CENTER);
 		panelAfrikanisch.add(contentPanelAll, BorderLayout.CENTER);
 		panelAmerikanisch.add(contentPanelAll, BorderLayout.CENTER);
@@ -178,7 +176,7 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(contentPanelAll, BorderLayout.CENTER);
 		panelMexikanisch.add(contentPanelAll, BorderLayout.CENTER);
 		panelTuerkisch.add(contentPanelAll, BorderLayout.CENTER);
-		//contentPanelAll.add(contentPanelAll, BorderLayout.CENTER);
+		// contentPanelAll.add(contentPanelAll, BorderLayout.CENTER);
 
 		panelHome.add(text3, BorderLayout.CENTER);
 
@@ -198,5 +196,11 @@ public class MainGUI extends JFrame {
 		add(tabbedPane, BorderLayout.CENTER);
 		toBack();
 
-	}}
+	}
+
+	private Object GridLayout(int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
