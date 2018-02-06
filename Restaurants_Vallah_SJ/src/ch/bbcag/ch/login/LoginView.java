@@ -96,4 +96,8 @@ public class LoginView extends JFrame {
 	public LoginView() {
 
 	}
+<<<<<<< HEAD
+	
+=======
+>>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 }

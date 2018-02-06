@@ -4,62 +4,68 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.event.ChangeListener;
+import javax.swing.JTextField;
 
 public class MainGUI extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
-	JPanel panelHome = new JPanel();
-	JPanel panelAsiatisch = new JPanel();
-	JPanel panelAfrikanisch = new JPanel();
-	JPanel panelAmerikanisch = new JPanel();
-	JPanel panelFranzoesisch = new JPanel();
-	JPanel panelIndisch = new JPanel();
-	JPanel panelItalienisch = new JPanel();
-	JPanel panelSchweizerisch = new JPanel();
-	JPanel panelSpanisch = new JPanel();
-	JPanel panelMexikanisch = new JPanel();
-	JPanel panelTuerkisch = new JPanel();
+	private static JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
+	private JPanel panelHome = new JPanel(new BorderLayout());
+	private JPanel panelAsiatisch = new JPanel();
+	private JPanel panelAfrikanisch = new JPanel();
+	private JPanel panelAmerikanisch = new JPanel();
+	private JPanel panelFranzoesisch = new JPanel();
+	private JPanel panelIndisch = new JPanel();
+	private JPanel panelItalienisch = new JPanel();
+	private JPanel panelSchweizerisch = new JPanel();
+	private JPanel panelSpanisch = new JPanel();
+	private JPanel panelMexikanisch = new JPanel();
+	private JPanel panelTuerkisch = new JPanel();
 
-	private static JLabel titel = new JLabel(
+	private JLabel titel = new JLabel(
 			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
-	private static JLabel text = new JLabel("<html><div style='text-align: center;'>"
-			+ "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-			+ "</div></html>");
+	private JTextField text3 = new JTextField(
+			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+
+	private JTextField text2 = new JTextField("Unser Projekt");
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		MainGUI main = new MainGUI();
-
 		main.setSize(1600, 800);
 		main.setVisible(true);
-
-		titel.setBounds(550, 60,550, 60);
-		titel.setFont(new Font("arial", Font.PLAIN, 60));
-		titel.setForeground(Color.black);
-		
-		text.setFont(new Font("arial", Font.PLAIN, 22));
-		text.setBounds(550, 300, 550, 300);
-
 	}
 
 	public MainGUI() {
 
-		add(titel);
 		toFront();
-		
-		add(text);
+
+		add(titel, BorderLayout.NORTH);
+		panelHome.add(text2, BorderLayout.NORTH);
+		panelHome.add(text3, BorderLayout.CENTER);
+		panelHome.setBackground(Color.BLACK);
+
+		titel.setBounds(550, 60, 550, 60);
+		titel.setFont(new Font("arial", Font.PLAIN, 60));
+		titel.setHorizontalAlignment(JTextField.CENTER);
+		;
+
+		text2.setHorizontalAlignment(JTextField.CENTER);
+		// text2.setAlignmentY(CENTER_ALIGNMENT);
+
+		// text2.setFont(new Font("arial", Font.PLAIN, 22));
+		// text2.setPreferredSize(new Dimension(800, 600));
+		text2.setBackground(Color.RED);
+		text2.setFont(new Font("arial", Font.PLAIN, 50));
+
+		text3.setFont(new Font("arial", Font.PLAIN, 22));
+		text3.setHorizontalAlignment(JTextField.CENTER);
+		text3.setBackground(Color.BLUE);
+
 		tabbedPane.addTab("Home", panelHome);
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
 		tabbedPane.addTab("Afrikanisch", panelAfrikanisch);
@@ -71,13 +77,9 @@ public class MainGUI extends JFrame {
 		tabbedPane.addTab("Spanisch", panelSpanisch);
 		tabbedPane.addTab("Mexikanisch", panelMexikanisch);
 		tabbedPane.addTab("Tuerkisch", panelTuerkisch);
-		add(tabbedPane);
+		add(tabbedPane, BorderLayout.CENTER);
 		toBack();
 
-	}
-	
-	void addChangeListener(ChangeListener l) {
-		
 	}
 
 }
