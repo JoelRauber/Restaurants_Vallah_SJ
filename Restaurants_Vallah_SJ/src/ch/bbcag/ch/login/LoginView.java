@@ -13,6 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import ch.bbcag.ch.ConnectionFactory;
+import ch.bbcag.ch.GUI.MainGUI;
 import ch.bbcag.ch.User.*;
 
 public class LoginView extends JFrame {
@@ -26,7 +27,7 @@ public class LoginView extends JFrame {
 		JFrame f = new JFrame("Login");
 		JTextField userName = new JTextField();
 		JPasswordField password = new JPasswordField();
-		JLabel lPassword = new JLabel("Password: ");
+		JLabel lPassword = new JLabel("Password: ");  
 		JLabel lUserName = new JLabel("Username: ");
 		JTextField fehler = new JTextField();
 		JLabel title = new JLabel("Login");
@@ -61,7 +62,9 @@ public class LoginView extends JFrame {
 						char[] formPassword = password.getPassword();
 						String dbPassword = user.getPassword().trim();
 						if (dbPassword.equals(new String(formPassword))) {
-							// TODO zum Haupt-GUI
+							MainGUI main = new MainGUI();
+							main.setSize(1600, 800);
+							main.setVisible(true);
 						} else {
 							fehler.setText("Falsches Passwort");
 						}
