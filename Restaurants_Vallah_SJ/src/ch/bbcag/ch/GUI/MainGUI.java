@@ -36,6 +36,8 @@ public class MainGUI extends JFrame {
 	private JPanel panelMexikanisch = new JPanel(new BorderLayout());
 	private JPanel panelTuerkisch = new JPanel(new BorderLayout());
 	private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
+	
 
 	private JLabel titel = new JLabel(
 			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
@@ -63,7 +65,6 @@ public class MainGUI extends JFrame {
 
 		toFront();
 
-		for (int y = 0; y < 10; y++) {
 			for (int i = 0; i < 6; i++) {
 				JTextPane felder = new JTextPane();
 				felder.setText("Test");
@@ -72,7 +73,7 @@ public class MainGUI extends JFrame {
 				felder.setBorder(null);
 				contentPanelAll.add(felder);
 			}
-		}
+		
 
 		titel.setBounds(550, 60, 550, 60);
 		titel.setFont(new Font("arial" , Font.PLAIN, 60));
@@ -201,6 +202,14 @@ public class MainGUI extends JFrame {
 	private Object GridLayout(int i, int j) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public JPanel getContentPanelAsiatisch() {
+		return contentPanelAsiatisch;
+	}
+
+	public void setContentPanelAsiatisch(JPanel contentPanelAsiatisch) {
+		this.contentPanelAsiatisch = contentPanelAsiatisch;
 	}
 
 }
