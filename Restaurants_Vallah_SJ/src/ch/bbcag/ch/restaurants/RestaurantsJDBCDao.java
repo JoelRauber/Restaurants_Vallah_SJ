@@ -49,4 +49,10 @@ public class RestaurantsJDBCDao implements RestaurantsDao {
 		}
 	}
 
+	@Override
+	public List<Restaurants> getAllAsiatisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
