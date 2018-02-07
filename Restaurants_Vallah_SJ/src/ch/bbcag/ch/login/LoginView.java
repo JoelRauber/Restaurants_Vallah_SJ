@@ -65,6 +65,7 @@ public class LoginView extends JFrame {
 							MainGUI main = new MainGUI();
 							main.setSize(1600, 800);
 							main.setVisible(true);
+							f.setVisible(false);
 						} else {
 							fehler.setText("Falsches Passwort");
 						}
