@@ -84,11 +84,17 @@ public class MainGUI extends JFrame {
 //			felder.setBorder(null);
 //			contentPanelAll.add(felder);
 //		}
+		
 		for (int i = 0; i < 6; i++) {
 			JTextPane felder = new JTextPane();
-			for (Restaurants restaurant : ud.getAllAsiatisch()) {
-				felder.setText(restaurant.toString());
+			Connection con = ConnectionFactory.getInstance().getConnection();
+			RestaurantsDao ud = new Asiatisch(con);
+			Restaurants restaurant = new Restaurants();
+			for (Restaurants restaurants : ud.getAllAsiatisch()) {
+				felder.setText(restaurants.toString());
+				break;
 			}
+			ConnectionFactory.getInstance().closeConnection();
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);

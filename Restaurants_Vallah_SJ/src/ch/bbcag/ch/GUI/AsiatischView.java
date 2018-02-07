@@ -16,7 +16,10 @@ public class AsiatischView {
 			RestaurantsDao ud = new Asiatisch(con);
 
 			for (Restaurants restaurant : ud.getAllAsiatisch()) {
-				System.out.println(restaurant.toString());
+				//System.out.println(restaurant.toString());
+				if(restaurant.getId() == 2) {
+					System.out.println(restaurant.toString());
+				}
 			}
 			
 			// ConnectionFactory.getInstance().closeConnection();

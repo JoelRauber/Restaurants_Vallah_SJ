@@ -49,8 +49,8 @@ public class Asiatisch implements RestaurantsDao {
 			con.close();
 			return restaurants;
 		} catch (SQLException ex) {
-			throw new RuntimeException(ex);
 		}
+		return null;
 	}
 
 	@Override
