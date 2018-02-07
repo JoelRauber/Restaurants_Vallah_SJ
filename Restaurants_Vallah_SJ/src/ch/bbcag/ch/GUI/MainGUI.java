@@ -13,6 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.restaurants.Restaurants;
@@ -89,21 +92,24 @@ public class MainGUI extends JFrame {
 //			contentPanelAll.add(felder);
 //		}
 		
-		for (int i = 0; i < 6; i++) {
+		Connection con = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao ud = new Asiatisch(con);
+		
+		for (Restaurants restaurant : ud.getAllAsiatisch()) {
 			JTextPane felder = new JTextPane();
-			Connection con = ConnectionFactory.getInstance().getConnection();
-			RestaurantsDao ud = new Asiatisch(con);
-			Restaurants restaurant = new Restaurants();
-			for (Restaurants restaurants : ud.getAllAsiatisch()) {
-				felder.setText(restaurants.toString());
-				break;
-			}
-			ConnectionFactory.getInstance().closeConnection();
+			StyledDocument doc = felder.getStyledDocument();
+			SimpleAttributeSet center = new SimpleAttributeSet();
+			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+			doc.setParagraphAttributes(0, doc.getLength(), center, false);
+			felder.setText(restaurant.toString());
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelAsiatisch.add(felder);
 		}
+		
+		ConnectionFactory.getInstance().closeConnection();
+		
 		for (int i = 0; i < 6; i++) {
 			JTextPane felder = new JTextPane();
 			Connection con = ConnectionFactory.getInstance().getConnection();

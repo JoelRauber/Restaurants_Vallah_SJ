@@ -1,4 +1,4 @@
-package ch.bbcag.ch.restaurants;
+package ch.bbcag.ch.GUI;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,21 +7,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantsJDBCDao implements RestaurantsDao {
+import ch.bbcag.ch.restaurants.Restaurants;
+import ch.bbcag.ch.restaurants.RestaurantsDao;
+
+public class Afrikanisch implements RestaurantsDao {
 
 	private Connection con = null;
 
-	public RestaurantsJDBCDao(Connection connection) {
+	public Afrikanisch(Connection connection) {
 		con = connection;
 	}
 
 	@Override
-	public List<Restaurants> getAllRestaurants() {
+	public List<Restaurants> getAllAfrikanisch() {
 		ResultSet rs;
 		try {
 			List<Restaurants> restaurants = new ArrayList<Restaurants>();
 			Restaurants u = null;
-			String sql = "select r.*, a.* from restaurant as r, adresse as a where r.adresse_id = a.id";
+			String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n" + 
+					"where r.adresse_id = a.id and typ = \"asiatisch\";";
 			PreparedStatement ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 
@@ -45,24 +49,23 @@ public class RestaurantsJDBCDao implements RestaurantsDao {
 			con.close();
 			return restaurants;
 		} catch (SQLException ex) {
-			throw new RuntimeException(ex);
 		}
+		return null;
 	}
 
+	@Override
+	public List<Restaurants> getAllRestaurants() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	@Override
 	public List<Restaurants> getAllAsiatisch() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	};
 
 	@Override
 	public List<Restaurants> getAllAmerikanisch() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Restaurants> getAllAfrikanisch() {
 		// TODO Auto-generated method stub
 		return null;
 	}

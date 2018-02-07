@@ -59,4 +59,52 @@ public class Asiatisch implements RestaurantsDao {
 		return null;
 	}
 
+	@Override
+	public List<Restaurants> getAllAmerikanisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllAfrikanisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllTuerkisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllIndisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllItalienisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllSchweizerisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllSpanisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Restaurants> getAllMexikanisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
