@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.sql.Connection;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -62,7 +63,10 @@ public class MainGUI extends JFrame {
 			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
 	private JTextField text3 = new JTextField(
 			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-
+	
+	private ImageIcon icon("restaurantBild.jpeg");
+	
+	                                                                               
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
 		main.setSize(1600, 800);
@@ -102,6 +106,13 @@ public class MainGUI extends JFrame {
 		}
 		for (int i = 0; i < 6; i++) {
 			JTextPane felder = new JTextPane();
+			Connection con = ConnectionFactory.getInstance().getConnection();
+			RestaurantsDao ud = new Asiatisch(con);
+			Restaurants restaurant = new Restaurants();
+			for (Restaurants restaurants : ud.getAllAsiatisch()) {
+				felder.setText(restaurants.toString());
+				break;
+			}
 			felder.setText("Test");
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
