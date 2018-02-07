@@ -16,6 +16,7 @@ public class MainGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private static JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
+	
 	private JPanel panelHome = new JPanel(new BorderLayout());
 	private JPanel panelAsiatisch = new JPanel(new BorderLayout());
 	private JPanel panelAfrikanisch = new JPanel(new BorderLayout());
@@ -27,14 +28,18 @@ public class MainGUI extends JFrame {
 	private JPanel panelSpanisch = new JPanel(new BorderLayout());
 	private JPanel panelMexikanisch = new JPanel(new BorderLayout());
 	private JPanel panelTuerkisch = new JPanel(new BorderLayout());
-	private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
-	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
-	
 
-	private JLabel titel = new JLabel(
-			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
-	private JTextField text3 = new JTextField(
-			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+//	private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelAfrikanisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelAmerikanisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelFranzoesisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelIndisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelItalienisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelSchweizerisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelSpanisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelMexikanisch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelTuerkisch = new JPanel(new GridLayout(2, 3));
 
 	private JTextField asiatisch = new JTextField("--> Asiatisch");
 	private JTextField afrikanisch = new JTextField("--> Afrikanisch");
@@ -47,6 +52,11 @@ public class MainGUI extends JFrame {
 	private JTextField mexikanisch = new JTextField("--> Mexikanisch");
 	private JTextField tuerkisch = new JTextField("--> Tuerkisch");
 
+	private JLabel titel = new JLabel(
+			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
+	private JTextField text3 = new JTextField(
+			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
 		main.setSize(1600, 800);
@@ -56,19 +66,104 @@ public class MainGUI extends JFrame {
 	public MainGUI() {
 
 		toFront();
-
-			for (int i = 0; i < 6; i++) {
-				JTextPane felder = new JTextPane();
-				felder.setText("Test");
-				felder.setEditable(false);
-				felder.setBackground(new Color(238, 238, 238));
-				felder.setBorder(null);
-				contentPanelAll.add(felder);
-			}
 		
+		
+		//***************************
+		
+//		for (int i = 0; i < 6; i++) {
+//			JTextPane felder = new JTextPane();
+//			felder.setText("Test");
+//			felder.setEditable(false);
+//			felder.setBackground(new Color(238, 238, 238));
+//			felder.setBorder(null);
+//			contentPanelAll.add(felder);
+//		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelAsiatisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelAfrikanisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelAmerikanisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelFranzoesisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelIndisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelItalienisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelSchweizerisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelSpanisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelMexikanisch.add(felder);
+		}
+		for (int i = 0; i < 6; i++) {
+			JTextPane felder = new JTextPane();
+			felder.setText("Test");
+			felder.setEditable(false);
+			felder.setBackground(new Color(238, 238, 238));
+			felder.setBorder(null);
+			contentPanelTuerkisch.add(felder);
+		}
+		
+		
+		//*************************************
 
 		titel.setBounds(550, 60, 550, 60);
-		titel.setFont(new Font("arial" , Font.PLAIN, 60));
+		titel.setFont(new Font("arial", Font.PLAIN, 60));
 		titel.setHorizontalAlignment(JTextField.CENTER);
 
 		panelHome.setBackground(Color.BLACK);
@@ -159,23 +254,22 @@ public class MainGUI extends JFrame {
 		panelMexikanisch.add(mexikanisch, BorderLayout.NORTH);
 		panelTuerkisch.add(tuerkisch, BorderLayout.NORTH);
 
-		panelAsiatisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelAfrikanisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelAmerikanisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelFranzoesisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelIndisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelItalienisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelSchweizerisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelSpanisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelMexikanisch.add(contentPanelAll, BorderLayout.CENTER);
-		panelTuerkisch.add(contentPanelAll, BorderLayout.CENTER);
-		// contentPanelAll.add(contentPanelAll, BorderLayout.CENTER);
+		panelAsiatisch.add(contentPanelAsiatisch, BorderLayout.CENTER);
+		panelAfrikanisch.add(contentPanelAfrikanisch, BorderLayout.CENTER);
+		panelAmerikanisch.add(contentPanelAmerikanisch, BorderLayout.CENTER);
+		panelFranzoesisch.add(contentPanelFranzoesisch, BorderLayout.CENTER);
+		panelIndisch.add(contentPanelIndisch, BorderLayout.CENTER);
+		panelItalienisch.add(contentPanelItalienisch, BorderLayout.CENTER);
+		panelSchweizerisch.add(contentPanelSchweizerisch, BorderLayout.CENTER);
+		panelSpanisch.add(contentPanelSpanisch, BorderLayout.CENTER);
+		panelMexikanisch.add(contentPanelMexikanisch, BorderLayout.CENTER);
+		panelTuerkisch.add(contentPanelTuerkisch, BorderLayout.CENTER);
 
 		panelHome.add(text3, BorderLayout.CENTER);
 
 		add(titel, BorderLayout.NORTH);
 
-		tabbedPane.addTab("Home", panelHome);
+		tabbedPane.addTab("Home", panelHome); 
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
 		tabbedPane.addTab("Afrikanisch", panelAfrikanisch);
 		tabbedPane.addTab("Amerikanisch", panelAmerikanisch);
