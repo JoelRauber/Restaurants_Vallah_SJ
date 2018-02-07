@@ -2,20 +2,12 @@ package ch.bbcag.ch.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.nio.FloatBuffer;
-
-import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -197,19 +189,6 @@ public class MainGUI extends JFrame {
 		add(tabbedPane, BorderLayout.CENTER);
 		toBack();
 
-	}
-
-	private Object GridLayout(int i, int j) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public JPanel getContentPanelAsiatisch() {
-		return contentPanelAsiatisch;
-	}
-
-	public void setContentPanelAsiatisch(JPanel contentPanelAsiatisch) {
-		this.contentPanelAsiatisch = contentPanelAsiatisch;
 	}
 
 }
