@@ -1,19 +1,19 @@
-package ch.bbcag.ch.User;
+package ch.bbcag.ch.restaurants;
 
 import java.sql.Connection;
 
 import ch.bbcag.ch.ConnectionFactory;
 
-public class UserView {
+public class RestaurantsView {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		User u = new User();
+		Restaurants u = new Restaurants();
 		Connection con = ConnectionFactory.getInstance().getConnection();
-		UserDao ud = new UserJDBCDao(con);
+		RestaurantsDao ud = new RestaurantsJDBCDao(con);
 
-		for (User user : ud.getAllUsers()) {
-			System.out.println(user.toString());
+		for (Restaurants restaurant : ud.getAllRestaurants()) {
+			System.out.println(restaurant.toString());
 		}
 		
 		// ConnectionFactory.getInstance().closeConnection();

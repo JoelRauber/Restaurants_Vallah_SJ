@@ -40,6 +40,7 @@ public class ConnectionFactory {
 		if (connection != null) {
 			try {
 				connection.close();
+				connection = null;
 			} catch (SQLException ex) {
 				throw new RuntimeException(ex);
 			}

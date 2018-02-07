@@ -74,7 +74,7 @@ public class LoginView extends JFrame {
 
 					}
 
-					ConnectionFactory.getInstance().closeConnection();
+					// ConnectionFactory.getInstance().closeConnection();
 				}
 			}
 		});

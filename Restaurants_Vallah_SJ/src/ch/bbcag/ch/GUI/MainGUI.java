@@ -4,12 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.sql.Connection;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+
+import ch.bbcag.ch.ConnectionFactory;
+import ch.bbcag.ch.restaurants.Restaurants;
+import ch.bbcag.ch.restaurants.RestaurantsDao;
 
 public class MainGUI extends JFrame {
 
@@ -80,7 +86,9 @@ public class MainGUI extends JFrame {
 //		}
 		for (int i = 0; i < 6; i++) {
 			JTextPane felder = new JTextPane();
-			felder.setText("Test");
+			for (Restaurants restaurant : ud.getAllAsiatisch()) {
+				felder.setText(restaurant.toString());
+			}
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
