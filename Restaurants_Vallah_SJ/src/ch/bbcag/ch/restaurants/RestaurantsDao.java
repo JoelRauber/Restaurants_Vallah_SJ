@@ -13,5 +13,6 @@ public interface RestaurantsDao {
 	public abstract List<Restaurants> getAllSchweizerisch();
 	public abstract List<Restaurants> getAllSpanisch();
 	public abstract List<Restaurants> getAllMexikanisch();
+	public abstract List<Restaurants> getAllFranzoesisch();
 	
 }

@@ -107,4 +107,10 @@ public class Asiatisch implements RestaurantsDao {
 		return null;
 	}
 
+	@Override
+	public List<Restaurants> getAllFranzoesisch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

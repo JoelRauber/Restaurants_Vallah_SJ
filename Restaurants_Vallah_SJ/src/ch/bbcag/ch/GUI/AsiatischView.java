@@ -13,13 +13,10 @@ public class AsiatischView {
 			// TODO Auto-generated method stub
 			Restaurants u = new Restaurants();
 			Connection con = ConnectionFactory.getInstance().getConnection();
-			RestaurantsDao ud = new Asiatisch(con);
+			RestaurantsDao ud = new Afrikanisch(con);
 
-			for (Restaurants restaurant : ud.getAllAsiatisch()) {
-				//System.out.println(restaurant.toString());
-				if(restaurant.getId() == 2) {
-					System.out.println(restaurant.toString());
-				}
+			for (Restaurants restaurant : ud.getAllAfrikanisch()) {
+				System.out.println(restaurant.toString());
 			}
 			
 			// ConnectionFactory.getInstance().closeConnection();

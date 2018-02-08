@@ -10,22 +10,22 @@ import java.util.List;
 import ch.bbcag.ch.restaurants.Restaurants;
 import ch.bbcag.ch.restaurants.RestaurantsDao;
 
-public class Afrikanisch implements RestaurantsDao {
+public class Amerikanisch implements RestaurantsDao {
 
 	private Connection con = null;
 
-	public Afrikanisch(Connection connection) {
+	public Amerikanisch(Connection connection) {
 		con = connection;
 	}
 
 	@Override
-	public List<Restaurants> getAllAfrikanisch() {
+	public List<Restaurants> getAllAmerikanisch() {
 		ResultSet rs;
 		try {
 			List<Restaurants> restaurants = new ArrayList<Restaurants>();
 			Restaurants u = null;
 			String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n" + 
-					"where r.adresse_id = a.id and typ = \"afrikanisch\";";
+					"where r.adresse_id = a.id and typ = \"amerikanisch\";";
 			PreparedStatement ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 
@@ -59,8 +59,10 @@ public class Afrikanisch implements RestaurantsDao {
 		return null;
 	}
 
+
+
 	@Override
-	public List<Restaurants> getAllAmerikanisch() {
+	public List<Restaurants> getAllAfrikanisch() {
 		// TODO Auto-generated method stub
 		return null;
 	}
