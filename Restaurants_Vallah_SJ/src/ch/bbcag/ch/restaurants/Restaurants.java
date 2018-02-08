@@ -162,7 +162,7 @@ public class Restaurants {
 
 	public String toString() {
 		String result = "";
-		result += "****************Restaurant "+ getId() + "****************\n\n";
+		result += "\n****************Restaurant "+ getId() + "****************\n\n";
 		result += "Id: " + getId() + "\n";
 		result += "Restaurants: " + getRestaurants() + "\n";
 		result += "Beschreibung: " +getBeschreibung() + "\n";
@@ -175,7 +175,7 @@ public class Restaurants {
 		result += "Hausnummer: " + getHnummer() + "\n";
 		result += "Ort: " + getOrt() + "\n";
 		result += "Land: " + getLand() + "\n \n";
-		result += "**************************************\n";
+		result += "**************************************";
 		return result;
 	}
 }

@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.sql.Connection;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -26,7 +27,7 @@ public class MainGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private static JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
-	
+
 	private JPanel panelHome = new JPanel(new BorderLayout());
 	private JPanel panelAsiatisch = new JPanel(new BorderLayout());
 	private JPanel panelAfrikanisch = new JPanel(new BorderLayout());
@@ -39,7 +40,7 @@ public class MainGUI extends JFrame {
 	private JPanel panelMexikanisch = new JPanel(new BorderLayout());
 	private JPanel panelTuerkisch = new JPanel(new BorderLayout());
 
-//	private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
+	// private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelAfrikanisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelAmerikanisch = new JPanel(new GridLayout(2, 3));
@@ -66,10 +67,7 @@ public class MainGUI extends JFrame {
 			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
 	private JTextField text3 = new JTextField(
 			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-	
-	
-	
-	                                                                               
+
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
 		main.setSize(1600, 800);
@@ -79,27 +77,15 @@ public class MainGUI extends JFrame {
 	public MainGUI() {
 
 		toFront();
-		
-		
-		//***************************
-		
-//		for (int i = 0; i < 6; i++) {
-//			JTextPane felder = new JTextPane();
-//			felder.setText("Test");
-//			felder.setEditable(false);
-//			felder.setBackground(new Color(238, 238, 238));
-//			felder.setBorder(null);
-//			contentPanelAll.add(felder);
-//		}
-		
-		
 
-		
+		// ***************************
+
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ud = new Asiatisch(con);
-		
+
 		for (Restaurants restaurant : ud.getAllAsiatisch()) {
 			JTextPane felder = new JTextPane();
+			JButton weiter = new JButton();
 			StyledDocument doc = felder.getStyledDocument();
 			SimpleAttributeSet center = new SimpleAttributeSet();
 			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
@@ -109,11 +95,12 @@ public class MainGUI extends JFrame {
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelAsiatisch.add(felder);
+			contentPanelAsiatisch.add(weiter);
 		}
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conaf = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao af = new Afrikanisch(conaf);
-		
+
 		for (Restaurants restaurant : af.getAllAfrikanisch()) {
 			JTextPane felder = new JTextPane();
 			StyledDocument doc = felder.getStyledDocument();
@@ -126,11 +113,11 @@ public class MainGUI extends JFrame {
 			felder.setBorder(null);
 			contentPanelAfrikanisch.add(felder);
 		}
-		
+
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conam = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao aam = new Amerikanisch(conam);
-		
+
 		for (Restaurants restaurant : aam.getAllAmerikanisch()) {
 			JTextPane felder = new JTextPane();
 			StyledDocument doc = felder.getStyledDocument();
@@ -146,7 +133,7 @@ public class MainGUI extends JFrame {
 		ConnectionFactory.getInstance().closeConnection();
 		Connection confr = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao afr = new Franzoesisch(confr);
-		
+
 		for (Restaurants restaurant : afr.getAllFranzoesisch()) {
 			JTextPane felder = new JTextPane();
 			StyledDocument doc = felder.getStyledDocument();
@@ -162,7 +149,7 @@ public class MainGUI extends JFrame {
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conin = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ain = new Indisch(conin);
-		
+
 		for (Restaurants restaurant : ain.getAllIndisch()) {
 			JTextPane felder = new JTextPane();
 			StyledDocument doc = felder.getStyledDocument();
@@ -178,7 +165,7 @@ public class MainGUI extends JFrame {
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conit = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ait = new Italienisch(conit);
-		
+
 		for (Restaurants restaurant : ait.getAllItalienisch()) {
 			JTextPane felder = new JTextPane();
 			StyledDocument doc = felder.getStyledDocument();
@@ -191,42 +178,78 @@ public class MainGUI extends JFrame {
 			felder.setBorder(null);
 			contentPanelItalienisch.add(felder);
 		}
-		for (int i = 0; i < 6; i++) {
+		
+		ConnectionFactory.getInstance().closeConnection();
+		Connection consc = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao asc = new Schweizerisch(consc);
+
+		for (Restaurants restaurant : asc.getAllSchweizerisch()) {
 			JTextPane felder = new JTextPane();
-			felder.setText("Test");
+			StyledDocument doc = felder.getStyledDocument();
+			SimpleAttributeSet center = new SimpleAttributeSet();
+			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+			doc.setParagraphAttributes(0, doc.getLength(), center, false);
+			felder.setText(restaurant.toString());
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelSchweizerisch.add(felder);
 		}
-		for (int i = 0; i < 6; i++) {
+		
+		ConnectionFactory.getInstance().closeConnection();
+		Connection consp = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao asp = new Spanisch(consp);
+
+		for (Restaurants restaurant : asp.getAllSpanisch()) {
 			JTextPane felder = new JTextPane();
-			felder.setText("Test");
+			StyledDocument doc = felder.getStyledDocument();
+			SimpleAttributeSet center = new SimpleAttributeSet();
+			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+			doc.setParagraphAttributes(0, doc.getLength(), center, false);
+			felder.setText(restaurant.toString());
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelSpanisch.add(felder);
 		}
-		for (int i = 0; i < 6; i++) {
+		
+		ConnectionFactory.getInstance().closeConnection();
+		Connection conme = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao ame = new Mexikanisch(conme);
+
+		for (Restaurants restaurant : ame.getAllMexikanisch()) {
 			JTextPane felder = new JTextPane();
-			felder.setText("Test");
+			StyledDocument doc = felder.getStyledDocument();
+			SimpleAttributeSet center = new SimpleAttributeSet();
+			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+			doc.setParagraphAttributes(0, doc.getLength(), center, false);
+			felder.setText(restaurant.toString());
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelMexikanisch.add(felder);
 		}
-		for (int i = 0; i < 6; i++) {
+		
+		ConnectionFactory.getInstance().closeConnection();
+		Connection contu = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao atu = new Tuerkisch(contu);
+
+		for (Restaurants restaurant : atu.getAllTuerkisch()) {
 			JTextPane felder = new JTextPane();
-			felder.setText("Test");
+			StyledDocument doc = felder.getStyledDocument();
+			SimpleAttributeSet center = new SimpleAttributeSet();
+			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+			doc.setParagraphAttributes(0, doc.getLength(), center, false);
+			felder.setText(restaurant.toString());
 			felder.setEditable(false);
 			felder.setBackground(new Color(238, 238, 238));
 			felder.setBorder(null);
 			contentPanelTuerkisch.add(felder);
 		}
+		
 		ConnectionFactory.getInstance().closeConnection();
-		
-		
-		//*************************************
+
+		// *************************************
 
 		titel.setBounds(550, 60, 550, 60);
 		titel.setFont(new Font("arial", Font.PLAIN, 60));
@@ -335,7 +358,7 @@ public class MainGUI extends JFrame {
 
 		add(titel, BorderLayout.NORTH);
 
-		tabbedPane.addTab("Home", panelHome); 
+		tabbedPane.addTab("Home", panelHome);
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
 		tabbedPane.addTab("Afrikanisch", panelAfrikanisch);
 		tabbedPane.addTab("Amerikanisch", panelAmerikanisch);

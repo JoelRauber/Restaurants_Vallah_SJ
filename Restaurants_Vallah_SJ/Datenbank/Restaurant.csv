@@ -1,61 +1,61 @@
-﻿id; restaurant;beschreibung;link;nr;kommentare;bewertung;typ;adresse_id
-1;Nagasui;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.nagasui.ch;044 288 28 88;;;asiatisch;1
-2;Tiffins Asian Kitchen;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.tiffins.ch;044 382 18 88;;;asiatisch;2
-3;LY'S ASIA;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.lys-asia.ch;044 999 08 08;;;asiatisch;3
-4;YEN'S;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.yens-restaurant.ch;044 558 89 76;;;asiatisch;4
-5;Restaurant Ach'i;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.achi.restaurant;044 542 88 85;;;asiatisch;5
-6;Lily's;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.lilys.ch;044 440 18 85;;;asiatisch;6
-7;Mesob Restaurant and Bar;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.mesob-restaurant.ch;043 960 02 51;;;afrikanisch;7
-8;Habesha Restaurant;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.habesha-restaurant.ch;044 463 59 24;;;afrikanisch;8
-9;Queen Idia African Restaurant;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.queenidia.ch;044 291 01 50;;;afrikanisch;9
-10;Le Manden;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.lemanden.ch;044 291 69 01;;;afrikanisch;10
-11;Meskerem;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.meskerem-restaurant.ch;044 451 38 27;;;afrikanisch;11
-12;Restaurant Moringa Teff;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.moringa-teff.ch;044 431 80 52;;;afrikanisch;12
-13;The Bite;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.thebite.ch;044 242 30 00;;;amerikanisch;13
-14;Holy Cow! Gourmet Burger Company;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.holycow.ch;021 312 24 04;;;amerikanisch;14
-15;LOFT FIVE;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.loftfive.ch;044 755 50 50 ;;;amerikanisch;15
-16;Brisket Southern BBQ & Bar;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.brisket.ch;044 241 20 20;;;amerikanisch;16
-17;Grain;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.grain.ch;044 261 02 81;;;amerikanisch;17
-18;Rolli's Steakhouse Oerlikon;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.rollis-steakhouse.ch;044 311 28 80;;;amerikanisch;18
-19;Didi's Frieden;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.didisfrieden.ch;044 253 18 01;;;franzoesisch;19
-20;Zunfthaus zur Waag;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.zunfthaus-zur-waag.ch;044 216 99 66;;;franzoesisch;20
-21;Kronenhalle;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.kronenhalle.ch;044 262 99 00;;;franzoesisch;21
-22;Restaurant Pavillon;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.aupavillon.ch;044 220 50 22;;;franzoesisch;22
-23;Restaurant La Soupi?re;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.hotelschweizerhof.ch;044 218 88 22;;;franzoesisch;23
-24;Brasserie Louis;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.brasserie-louis.ch;044 250 76 80;;;franzoesisch;24
-25;Haus Hiltl;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.hiltl.ch;044 227 70 00;;;indisch;25
-26;Tadka Indisches Restaurant;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.tadka.ch;044 578 06 41;;;indisch;26
-27;Hiltl Dachterrasse;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.hiltl.ch;044 888 88 00;;;indisch;27
-28;Vulkan;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.restaurant-vulkan.ch;044 273 76 67;;;indisch;28
-29;Kerala;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.keralarestaurant.ch;044 364 45 77;;;indisch;29
-30;Restaurant Malabar;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.malabar-restaurant.ch;044 311 31 17;;;indisch;30
-31;La Fonte;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.la-fonte.ch;044 321 91 51;;;italienisch;31
-32;Cantinetta Antinori;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.bindella.ch;044 211 72 10 ;;;italienisch;32
-33;Ristorante Bindella Z〉ich;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.bindella.ch;044 221 25 46;;;italienisch;33
-34;La Pasta;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.lapasta-zh.ch;044 740 20 00;;;italienisch;34
-35;Bianchi;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.bindella.ch;044 262 98 44;;;italienisch;35
-36;Pizzeria Dal Nastro;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.dalnastro.ch;044 301 41 41;;;italienisch;36
-37;Kindli;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.kindli.ch;043 888 76 76;;;schweizerisch;37
-38;Differente Hotel Krone Unterstrass;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.hotel-krone.ch;044 360 56 56;;;schweizerisch;38
-39;Zeughauskeller;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.zeughauskeller.ch;044 220 15 15;;;schweizerisch;39
-40;Zunfthaus zur Waag;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.zunfthaus-zur-waag.ch;044 216 99 66;;;schweizerisch;40
-41;Swiss Chuchi Restaurant Z〉ich;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.hotel-adler.ch;044 266 96 66;;;schweizerisch;41
-42;Raclette Stube;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.raclett-stube.ch;044 251 41 30;;;schweizerisch;42
-43;Bodega Espanola;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.bodega-espanola.ch;044 251 23 10;;;spanisch;43
-44;Restaurant Madrid;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.restaurantmadrid.ch;044 251 13 33;;;spanisch;44
-45;Casa Aurelio;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.casaaurelio.ch;044 272 77 44;;;spanisch;45
-46;Casco Viejo;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.casco-viejo.ch;044 260 82 11;;;spanisch;46
-47;Taverna Catalana;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.tavernacatalana.ch;044 221 12 62;;;spanisch;47
-48;Restaurant Real;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.restaurant-real.ch;044 241 44 41;;;spanisch;48
-49;La Taqueria;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.lataqueria.ch;043 321 50 50;;;mexikanisch;49
-50;Restaurant Papa Joe's;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.papajoes.ch;044 269 88 88;;;mexikanisch;50
-51;Tacos Plaza;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.tacosplaza.ch;null;;;mexikanisch;51
-52;El Luchador;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.elluchador.ch;044 271 72 00;;;mexikanisch;52
-53;Cartel - Crazy Burrito Shack;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.cartelburito.ch;null;;;mexikanisch;53
-54;Don Weber;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.donweber.ch;044 277 05 40;;;mexikanisch;54
-55;Caf? BEBEK;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.bebek.ch;044 297 11 00;;;t「erkisch;55
-56;01 Ocakbasi;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.01ocakbasi.ch;043 321 77 70;;;t「erkisch;56
-57;Original Kebap House;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;null;043 558 66 44;;;t「erkisch;57
-58;Ayverdi's Restaurant & Take Away;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;www.ayverdis.ch;043 299 02 30;;;t「erkisch;58
-59;By Elvis - Der King Am Grill;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;null;044 777 24 24;;;t「erkisch;59
-60;Bar Memo-Can;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.;null;044 431 35 00;;;t「erkisch;60
+B	 restaurant	beschreibung	link	nr	kommentare	bewertung	typ	adresse_id
+1	Nagasui	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.nagasui.ch	044 288 28 88			asiatisch	1
+2	Tiffins Asian Kitchen	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.tiffins.ch	044 382 18 88			asiatisch	2
+3	LY'S ASIA	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.lys-asia.ch	044 999 08 08			asiatisch	3
+4	YEN'S	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.yens-restaurant.ch	044 558 89 76			asiatisch	4
+5	Restaurant Ach'i	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.achi.restaurant	044 542 88 85			asiatisch	5
+6	Lily's	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.lilys.ch	044 440 18 85			asiatisch	6
+7	Mesob Restaurant and Bar	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.mesob-restaurant.ch	043 960 02 51			afrikanisch	7
+8	Habesha Restaurant	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.habesha-restaurant.ch	044 463 59 24			afrikanisch	8
+9	Queen Idia African Restaurant	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.queenidia.ch	044 291 01 50			afrikanisch	9
+10	Le Manden	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.lemanden.ch	044 291 69 01			afrikanisch	10
+11	Meskerem	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.meskerem-restaurant.ch	044 451 38 27			afrikanisch	11
+12	Restaurant Moringa Teff	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.moringa-teff.ch	044 431 80 52			afrikanisch	12
+13	The Bite	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.thebite.ch	044 242 30 00			amerikanisch	13
+14	Holy Cow! Gourmet Burger Company	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.holycow.ch	021 312 24 04			amerikanisch	14
+15	LOFT FIVE	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.loftfive.ch	044 755 50 50 			amerikanisch	15
+16	Brisket Southern BBQ & Bar	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.brisket.ch	044 241 20 20			amerikanisch	16
+17	Grain	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.grain.ch	044 261 02 81			amerikanisch	17
+18	Rolli's Steakhouse Oerlikon	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.rollis-steakhouse.ch	044 311 28 80			amerikanisch	18
+19	Didi's Frieden	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.didisfrieden.ch	044 253 18 01			franzoesisch	19
+20	Zunfthaus zur Waag	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.zunfthaus-zur-waag.ch	044 216 99 66			franzoesisch	20
+21	Kronenhalle	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.kronenhalle.ch	044 262 99 00			franzoesisch	21
+22	Restaurant Pavillon	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.aupavillon.ch	044 220 50 22			franzoesisch	22
+23	Restaurant La Soupi?re	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.hotelschweizerhof.ch	044 218 88 22			franzoesisch	23
+24	Brasserie Louis	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.brasserie-louis.ch	044 250 76 80			franzoesisch	24
+25	Haus Hiltl	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.hiltl.ch	044 227 70 00			indisch	25
+26	Tadka Indisches Restaurant	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.tadka.ch	044 578 06 41			indisch	26
+27	Hiltl Dachterrasse	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.hiltl.ch	044 888 88 00			indisch	27
+28	Vulkan	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.restaurant-vulkan.ch	044 273 76 67			indisch	28
+29	Kerala	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.keralarestaurant.ch	044 364 45 77			indisch	29
+30	Restaurant Malabar	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.malabar-restaurant.ch	044 311 31 17			indisch	30
+31	La Fonte	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.la-fonte.ch	044 321 91 51			italienisch	31
+32	Cantinetta Antinori	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.bindella.ch	044 211 72 10 			italienisch	32
+33	Ristorante Bindella Z?ich	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.bindella.ch	044 221 25 46			italienisch	33
+34	La Pasta	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.lapasta-zh.ch	044 740 20 00			italienisch	34
+35	Bianchi	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.bindella.ch	044 262 98 44			italienisch	35
+36	Pizzeria Dal Nastro	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.dalnastro.ch	044 301 41 41			italienisch	36
+37	Kindli	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.kindli.ch	043 888 76 76			schweizerisch	37
+38	Differente Hotel Krone Unterstrass	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.hotel-krone.ch	044 360 56 56			schweizerisch	38
+39	Zeughauskeller	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.zeughauskeller.ch	044 220 15 15			schweizerisch	39
+40	Zunfthaus zur Waag	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.zunfthaus-zur-waag.ch	044 216 99 66			schweizerisch	40
+41	Swiss Chuchi Restaurant Z?ich	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.hotel-adler.ch	044 266 96 66			schweizerisch	41
+42	Raclette Stube	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.raclett-stube.ch	044 251 41 30			schweizerisch	42
+43	Bodega Espanola	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.bodega-espanola.ch	044 251 23 10			spanisch	43
+44	Restaurant Madrid	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.restaurantmadrid.ch	044 251 13 33			spanisch	44
+45	Casa Aurelio	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.casaaurelio.ch	044 272 77 44			spanisch	45
+46	Casco Viejo	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.casco-viejo.ch	044 260 82 11			spanisch	46
+47	Taverna Catalana	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.tavernacatalana.ch	044 221 12 62			spanisch	47
+48	Restaurant Real	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.restaurant-real.ch	044 241 44 41			spanisch	48
+49	La Taqueria	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.lataqueria.ch	043 321 50 50			mexikanisch	49
+50	Restaurant Papa Joe's	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.papajoes.ch	044 269 88 88			mexikanisch	50
+51	Tacos Plaza	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.tacosplaza.ch	null			mexikanisch	51
+52	El Luchador	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.elluchador.ch	044 271 72 00			mexikanisch	52
+53	Cartel - Crazy Burrito Shack	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.cartelburito.ch	null			mexikanisch	53
+54	Don Weber	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.donweber.ch	044 277 05 40			mexikanisch	54
+55	Caf? BEBEK	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.bebek.ch	044 297 11 00			t?erkisch	55
+56	01 Ocakbasi	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.01ocakbasi.ch	043 321 77 70			t?erkisch	56
+57	Original Kebap House	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	null	043 558 66 44			t?erkisch	57
+58	Ayverdi's Restaurant & Take Away	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	www.ayverdis.ch	043 299 02 30			t?erkisch	58
+59	By Elvis - Der King Am Grill	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	null	044 777 24 24			t?erkisch	59
+60	Bar Memo-Can	Lorem ipsum dolor sit amet, consetetur sadipscing elitr.	null	044 431 35 00			t?erkisch	60
