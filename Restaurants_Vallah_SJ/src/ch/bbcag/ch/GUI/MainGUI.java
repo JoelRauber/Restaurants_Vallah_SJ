@@ -2,6 +2,7 @@ package ch.bbcag.ch.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.sql.Connection;
@@ -84,17 +85,12 @@ public class MainGUI extends JFrame {
 		RestaurantsDao ud = new Asiatisch(con);
 
 		for (Restaurants restaurant : ud.getAllAsiatisch()) {
-			JTextPane felder = new JTextPane();
 			JButton weiter = new JButton();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelAsiatisch.add(felder);
+			ImageIcon icon = new ImageIcon("restaurantBild.jpeg");
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setIcon(icon);
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
 			contentPanelAsiatisch.add(weiter);
 		}
 		ConnectionFactory.getInstance().closeConnection();
@@ -102,16 +98,11 @@ public class MainGUI extends JFrame {
 		RestaurantsDao af = new Afrikanisch(conaf);
 
 		for (Restaurants restaurant : af.getAllAfrikanisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelAfrikanisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelAfrikanisch.add(weiter);
 		}
 
 		ConnectionFactory.getInstance().closeConnection();
@@ -119,64 +110,44 @@ public class MainGUI extends JFrame {
 		RestaurantsDao aam = new Amerikanisch(conam);
 
 		for (Restaurants restaurant : aam.getAllAmerikanisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelAmerikanisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelAmerikanisch.add(weiter);
 		}
 		ConnectionFactory.getInstance().closeConnection();
 		Connection confr = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao afr = new Franzoesisch(confr);
 
 		for (Restaurants restaurant : afr.getAllFranzoesisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelFranzoesisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelFranzoesisch.add(weiter);
 		}
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conin = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ain = new Indisch(conin);
 
 		for (Restaurants restaurant : ain.getAllIndisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelIndisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelIndisch.add(weiter);
 		}
 		ConnectionFactory.getInstance().closeConnection();
 		Connection conit = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ait = new Italienisch(conit);
 
 		for (Restaurants restaurant : ait.getAllItalienisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelItalienisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelItalienisch.add(weiter);
 		}
 		
 		ConnectionFactory.getInstance().closeConnection();
@@ -184,16 +155,11 @@ public class MainGUI extends JFrame {
 		RestaurantsDao asc = new Schweizerisch(consc);
 
 		for (Restaurants restaurant : asc.getAllSchweizerisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelSchweizerisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelSchweizerisch.add(weiter);
 		}
 		
 		ConnectionFactory.getInstance().closeConnection();
@@ -201,16 +167,11 @@ public class MainGUI extends JFrame {
 		RestaurantsDao asp = new Spanisch(consp);
 
 		for (Restaurants restaurant : asp.getAllSpanisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelSpanisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelSpanisch.add(weiter);
 		}
 		
 		ConnectionFactory.getInstance().closeConnection();
@@ -218,16 +179,11 @@ public class MainGUI extends JFrame {
 		RestaurantsDao ame = new Mexikanisch(conme);
 
 		for (Restaurants restaurant : ame.getAllMexikanisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelMexikanisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelMexikanisch.add(weiter);
 		}
 		
 		ConnectionFactory.getInstance().closeConnection();
@@ -235,16 +191,11 @@ public class MainGUI extends JFrame {
 		RestaurantsDao atu = new Tuerkisch(contu);
 
 		for (Restaurants restaurant : atu.getAllTuerkisch()) {
-			JTextPane felder = new JTextPane();
-			StyledDocument doc = felder.getStyledDocument();
-			SimpleAttributeSet center = new SimpleAttributeSet();
-			StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-			doc.setParagraphAttributes(0, doc.getLength(), center, false);
-			felder.setText(restaurant.toString());
-			felder.setEditable(false);
-			felder.setBackground(new Color(238, 238, 238));
-			felder.setBorder(null);
-			contentPanelTuerkisch.add(felder);
+			JButton weiter = new JButton();
+			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setBackground(new Color(238, 238, 238));
+			weiter.setBorder(null);
+			contentPanelTuerkisch.add(weiter);
 		}
 		
 		ConnectionFactory.getInstance().closeConnection();
