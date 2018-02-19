@@ -1,4 +1,4 @@
-package ch.bbcag.ch.GUI;
+package ch.bbcag.ch.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
