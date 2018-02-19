@@ -42,7 +42,7 @@ public class LoginView extends JFrame {
 		password.setBounds(130, 170, 200, 30);
 		lUserName.setBounds(50, 120, 200, 30);
 		lPassword.setBounds(50, 170, 200, 30);
-		title.setBounds(130, 10, 200, 100);
+		title.setBounds(50, 10, 200, 100);
 		senden.setBounds(130, 220, 200, 30);
 		registrieren.setBounds(130, 270, 200, 30);
 		fehler.setBounds(130, 310, 200, 30);

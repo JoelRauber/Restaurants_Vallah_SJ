@@ -1,19 +1,12 @@
 package ch.bbcag.ch.GUI;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
- 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
  
 public class RestaurantGUI {
  
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
-
     private JFrame fenster;
  
     private JPanel panel;
