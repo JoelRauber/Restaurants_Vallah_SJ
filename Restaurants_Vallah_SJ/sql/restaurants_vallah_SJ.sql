@@ -59,7 +59,7 @@ load data local infile 'T:\\_Team\\Informatiker 17\\zraubj\\10 - Anwendungsentwi
 into table restaurant
 character set utf8
 fields terminated by ';'
-ignore 1 Rows (id, name, beschreibung, link, nummer, kommentar, bewertung, typ, adresse_id);
+ignore 1 Rows (name, beschreibung, link, nummer, kommentar, bewertung, typ, adresse_id);
 
 select * from user;
 

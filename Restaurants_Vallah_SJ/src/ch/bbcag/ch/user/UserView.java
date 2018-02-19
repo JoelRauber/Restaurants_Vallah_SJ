@@ -1,4 +1,4 @@
-package ch.bbcag.ch.User;
+package ch.bbcag.ch.user;
 
 import java.sql.Connection;
 

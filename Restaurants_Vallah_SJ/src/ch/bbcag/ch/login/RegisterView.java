@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.GUI.MainGUI;
-import ch.bbcag.ch.User.*;
+import ch.bbcag.ch.user.*;
 
 public class RegisterView extends JFrame {
 

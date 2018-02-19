@@ -14,13 +14,10 @@ import javax.swing.JTextField;
 
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.GUI.MainGUI;
-import ch.bbcag.ch.User.*;
+import ch.bbcag.ch.user.*;
 
 public class LoginView extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private JTextField userName;

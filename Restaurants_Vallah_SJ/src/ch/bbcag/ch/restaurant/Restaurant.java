@@ -1,14 +1,14 @@
-package ch.bbcag.ch.restaurants;
+package ch.bbcag.ch.restaurant;
 
-public class Restaurants {
+public class Restaurant {
 	private int id;
-	private String restaurant;
+	private String name;
 	private String beschreibung;
 	private String link;
 	private String nummer;
 	private String kommentar;
 	private String bewertung;
-	private String typ;
+	private RestaurantType typ;
 	private String strasse;
 	private String hnummer;
 	private String ort;
@@ -22,8 +22,8 @@ public class Restaurants {
 
 
 
-	public String getRestaurants() {
-		return restaurant;
+	public String getName() {
+		return name;
 	}
 
 
@@ -58,7 +58,7 @@ public class Restaurants {
 
 
 
-	public String getTyp() {
+	public RestaurantType getTyp() {
 		return typ;
 	}
 
@@ -94,8 +94,8 @@ public class Restaurants {
 
 
 
-	public void setRestaurants(String restaurant) {
-		this.restaurant = restaurant;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
@@ -130,7 +130,7 @@ public class Restaurants {
 
 
 
-	public void setTyp(String typ) {
+	public void setTyp(RestaurantType typ) {
 		this.typ = typ;
 	}
 
@@ -164,7 +164,7 @@ public class Restaurants {
 		String result = "";
 		result += "\n****************Restaurant "+ getId() + "****************\n\n";
 		result += "Id: " + getId() + "\n";
-		result += "Restaurants: " + getRestaurants() + "\n";
+		result += "Restaurants: " + getName() + "\n";
 		result += "Beschreibung: " +getBeschreibung() + "\n";
 		result += "Link: " + getLink() + "\n";
 		result += "Nummer: " + getNummer() + "\n";

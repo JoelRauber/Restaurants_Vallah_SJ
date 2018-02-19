@@ -1,4 +1,4 @@
-package ch.bbcag.ch.restaurants;
+package ch.bbcag.ch.restaurant;
 
 import java.sql.Connection;
 
@@ -8,11 +8,11 @@ public class RestaurantsView {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Restaurants u = new Restaurants();
+		Restaurant u = new Restaurant();
 		Connection con = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao ud = new RestaurantsJDBCDao(con);
+		RestaurantDao ud = new RestaurantsJDBCDao(con);
 
-		for (Restaurants restaurant : ud.getAllRestaurants()) {
+		for (Restaurant restaurant : ud.getAllRestaurants()) {
 			System.out.println(restaurant.toString());
 		}
 		
