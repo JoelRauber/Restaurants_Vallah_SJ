@@ -1,3 +1,5 @@
+package ch.bbcag.ch.GUI;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
  
