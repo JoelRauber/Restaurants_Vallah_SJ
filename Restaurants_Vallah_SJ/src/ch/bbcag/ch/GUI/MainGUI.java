@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -75,10 +77,9 @@ public class MainGUI extends JFrame {
 		toFront();
 
 		// ***************************
-
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		RestaurantsDao ud = new Asiatisch(con);
-
+		
 		for (Restaurants restaurant : ud.getAllAsiatisch()) {
 			JButton weiter = new JButton();
 			ImageIcon icon = new ImageIcon("restaurantBild.jpeg");
@@ -88,9 +89,10 @@ public class MainGUI extends JFrame {
 			weiter.setBorder(null);
 			contentPanelAsiatisch.add(weiter);
 		}
-		ConnectionFactory.getInstance().closeConnection();
-		Connection conaf = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao af = new Afrikanisch(conaf);
+		
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection conaf = ConnectionFactory.getInstance().getConnection();
+		RestaurantsDao af = new Afrikanisch(con);
 
 		for (Restaurants restaurant : af.getAllAfrikanisch()) {
 			JButton weiter = new JButton();
@@ -101,99 +103,99 @@ public class MainGUI extends JFrame {
 		}
 
 		ConnectionFactory.getInstance().closeConnection();
-		Connection conam = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao aam = new Amerikanisch(conam);
-
-		for (Restaurants restaurant : aam.getAllAmerikanisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelAmerikanisch.add(weiter);
-		}
-		ConnectionFactory.getInstance().closeConnection();
-		Connection confr = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao afr = new Franzoesisch(confr);
-
-		for (Restaurants restaurant : afr.getAllFranzoesisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelFranzoesisch.add(weiter);
-		}
-		ConnectionFactory.getInstance().closeConnection();
-		Connection conin = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao ain = new Indisch(conin);
-
-		for (Restaurants restaurant : ain.getAllIndisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelIndisch.add(weiter);
-		}
-		ConnectionFactory.getInstance().closeConnection();
-		Connection conit = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao ait = new Italienisch(conit);
-
-		for (Restaurants restaurant : ait.getAllItalienisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelItalienisch.add(weiter);
-		}
-		
-		ConnectionFactory.getInstance().closeConnection();
-		Connection consc = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao asc = new Schweizerisch(consc);
-
-		for (Restaurants restaurant : asc.getAllSchweizerisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelSchweizerisch.add(weiter);
-		}
-		
-		ConnectionFactory.getInstance().closeConnection();
-		Connection consp = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao asp = new Spanisch(consp);
-
-		for (Restaurants restaurant : asp.getAllSpanisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelSpanisch.add(weiter);
-		}
-		
-		ConnectionFactory.getInstance().closeConnection();
-		Connection conme = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao ame = new Mexikanisch(conme);
-
-		for (Restaurants restaurant : ame.getAllMexikanisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelMexikanisch.add(weiter);
-		}
-		
-		ConnectionFactory.getInstance().closeConnection();
-		Connection contu = ConnectionFactory.getInstance().getConnection();
-		RestaurantsDao atu = new Tuerkisch(contu);
-
-		for (Restaurants restaurant : atu.getAllTuerkisch()) {
-			JButton weiter = new JButton();
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
-			weiter.setBackground(new Color(238, 238, 238));
-			weiter.setBorder(null);
-			contentPanelTuerkisch.add(weiter);
-		}
-		
-		ConnectionFactory.getInstance().closeConnection();
+//		Connection conam = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao aam = new Amerikanisch(conam);
+//
+//		for (Restaurants restaurant : aam.getAllAmerikanisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelAmerikanisch.add(weiter);
+//		}
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection confr = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao afr = new Franzoesisch(confr);
+//
+//		for (Restaurants restaurant : afr.getAllFranzoesisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelFranzoesisch.add(weiter);
+//		}
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection conin = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao ain = new Indisch(conin);
+//
+//		for (Restaurants restaurant : ain.getAllIndisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelIndisch.add(weiter);
+//		}
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection conit = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao ait = new Italienisch(conit);
+//
+//		for (Restaurants restaurant : ait.getAllItalienisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelItalienisch.add(weiter);
+//		}
+//		
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection consc = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao asc = new Schweizerisch(consc);
+//
+//		for (Restaurants restaurant : asc.getAllSchweizerisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelSchweizerisch.add(weiter);
+//		}
+//		
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection consp = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao asp = new Spanisch(consp);
+//
+//		for (Restaurants restaurant : asp.getAllSpanisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelSpanisch.add(weiter);
+//		}
+//		
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection conme = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao ame = new Mexikanisch(conme);
+//
+//		for (Restaurants restaurant : ame.getAllMexikanisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelMexikanisch.add(weiter);
+//		}
+//		
+//		ConnectionFactory.getInstance().closeConnection();
+//		Connection contu = ConnectionFactory.getInstance().getConnection();
+//		RestaurantsDao atu = new Tuerkisch(contu);
+//
+//		for (Restaurants restaurant : atu.getAllTuerkisch()) {
+//			JButton weiter = new JButton();
+//			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getRestaurants() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+//			weiter.setBackground(new Color(238, 238, 238));
+//			weiter.setBorder(null);
+//			contentPanelTuerkisch.add(weiter);
+//		}
+//		
+//		ConnectionFactory.getInstance().closeConnection();
 
 		// *************************************
 

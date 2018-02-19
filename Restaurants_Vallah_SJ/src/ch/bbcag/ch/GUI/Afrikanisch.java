@@ -23,14 +23,13 @@ public class Afrikanisch implements RestaurantsDao {
 		ResultSet rs;
 		try {
 			List<Restaurants> restaurants = new ArrayList<Restaurants>();
-			Restaurants u = null;
-			String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n" + 
-					"where r.adresse_id = a.id and typ = \"afrikanisch\";";
+			Restaurants u = new Restaurants();
+			String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n"
+					+ "where r.adresse_id = a.id and typ = \"afrikanisch\";";
 			PreparedStatement ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-				u = new Restaurants();
 				u.setId(rs.getInt("id"));
 				u.setRestaurants(rs.getString("name"));
 				u.setBeschreibung(rs.getString("beschreibung"));
@@ -45,12 +44,13 @@ public class Afrikanisch implements RestaurantsDao {
 				u.setLand(rs.getString("land"));
 				restaurants.add(u);
 			}
-			rs.close();
-			con.close();
+			if (rs != null) {
+				rs.close();
+			}
 			return restaurants;
 		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
 		}
-		return null;
 	}
 
 	@Override

@@ -34,11 +34,30 @@ public class UserJDBCDao implements UserDao {
 				u.setPassword(rs.getString("passwort"));
 				users.add(u);
 			}
-			rs.close();
-			con.close();
+			if (rs != null) {
+				rs.close();
+			}
+			if (con != null) {
+				con.close();
+			}
 			return users;
 		} catch (SQLException ex) {
 			throw new RuntimeException(ex);
+		}
+	}
+
+	public void insertUser(User u) {
+		try {
+			String sql = "INSERT INTO user(vorname, name, eMail, userName, passwort) VALUES (?, ?, ?, ?, ?)";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, u.getVorname());
+			ps.setString(2, u.getName());
+			ps.setString(3, u.getEmail());
+			ps.setString(4, u.getUsername());
+			ps.setString(5, u.getPassword());
+
+			ps.executeUpdate();
+		} catch (SQLException ex) {
 		}
 	}
 }
