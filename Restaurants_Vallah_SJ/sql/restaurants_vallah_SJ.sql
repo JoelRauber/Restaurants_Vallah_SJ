@@ -67,7 +67,7 @@ select * from adresse;
 
 select * from restaurant;
 
-delete from adresse;
+delete from user where id = 4;
 
 drop table adresse;
 drop table restaurant;

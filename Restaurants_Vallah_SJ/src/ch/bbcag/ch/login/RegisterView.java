@@ -24,12 +24,12 @@ public class RegisterView extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private JFrame f;
-	private JTextField userName;
-	private JTextField vorname;
-	private JTextField nachname;
-	private JTextField email;
+	private static JTextField userName;
+	private static JTextField vorname;
+	private static JTextField nachname;
+	private static JTextField email;
 
-	private JPasswordField password;
+	private static JPasswordField password;
 
 	private JLabel lPassword;
 	private JLabel lUserName;
@@ -41,6 +41,26 @@ public class RegisterView extends JFrame {
 
 	private JButton senden;
 	private JButton zurück;
+	
+	public static void insert() {
+		User u = new User();
+		Connection con = ConnectionFactory.getInstance().getConnection();
+		UserDao ud = new UserJDBCDao(con);
+		
+		u.setName(nachname.getText());
+		u.setVorname(vorname.getText());
+		u.setEmail(email.getText());
+		u.setUsername(userName.getText());
+		u.setPassword(new String(password.getPassword()));
+		ud.insertUser(u);
+		
+//		u.setName("Meier");
+//		u.setVorname("Ben");
+//		u.setEmail("ben@gmx.ch");
+//		u.setUsername("BenMeier");
+//		u.setPassword("BenMeier");
+//		ud.insertUser(u);
+	}
 
 	public static void main(String[] args) {
 		RegisterView register = new RegisterView();
@@ -102,20 +122,12 @@ public class RegisterView extends JFrame {
 				System.out.println(new String(password.getPassword()).equals(""));
 				System.out.println(userName.getText().equals("") == false);
 				if (new String(password.getPassword()).equals("") == false) {
-					User u = new User();
-					Connection con = ConnectionFactory.getInstance().getConnection();
-					UserDao ud = new UserJDBCDao(con);
 					if (userName.getText().equals("") == false) {
 						MainGUI main = new MainGUI();
 						main.setSize(1600, 800);
 						main.setVisible(true);
 						f.setVisible(false);
-						u.setName(nachname.getText());
-						u.setVorname(vorname.getText());
-						u.setEmail(email.getText());
-						u.setUsername(userName.getText());
-						u.setPassword(new String(password.getPassword()));
-						ud.insertUser(u);
+						insert();
 					} else {
 						fehler.setText("Mit Sterne bitte ausfüllen");
 					}
