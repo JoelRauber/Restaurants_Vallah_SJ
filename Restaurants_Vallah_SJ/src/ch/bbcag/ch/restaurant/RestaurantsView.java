@@ -12,8 +12,12 @@ public class RestaurantsView {
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		RestaurantDao ud = new RestaurantsJDBCDao(con);
 
-		for (Restaurant restaurant : ud.getAllRestaurants()) {
-			System.out.println(restaurant.toString());
+//		for (Restaurant restaurant : ud.getAllRestaurants()) {
+//			System.out.println(restaurant.toString());
+//		}
+		
+		for (Restaurant res : ud.getAllBySearch("a")) {
+			System.out.println(res.toString());
 		}
 		
 		// ConnectionFactory.getInstance().closeConnection();
