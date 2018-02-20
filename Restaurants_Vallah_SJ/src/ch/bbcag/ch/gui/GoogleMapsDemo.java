@@ -1,32 +1,20 @@
 package ch.bbcag.ch.gui;
-
-import java.awt.BorderLayout;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
- 
-public class RestaurantGUI extends JFrame {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		JFrame rsWindow = new JFrame();
-		JTextField text = new JTextField("Hello");
+public class GoogleMapsDemo {
+	public static void main(String[] args) throws IOException {
+		JFrame test = new JFrame("Google Maps");
 		try {
-			String latitude = "48.714728";
+			String latitude = "40.714728";
 			String longitude = "-73.998672";
-			String imageUrl = "https://map.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
+			String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
 					+ "&zoom=11&size=612x612&scale=2&maptype=roadmap";
 			String destinationFile = "image.jpg";
 			// read the map image from Google
@@ -46,16 +34,13 @@ public class RestaurantGUI extends JFrame {
 			e.printStackTrace();
 			System.exit(1);
 		}
-
-		ImageIcon map = new ImageIcon(
-				(new ImageIcon("image.jpg")).getImage().getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH));
-		rsWindow.setVisible(true);
-		rsWindow.add(new JLabel(map));
-		//rsWindow.add(text);
-		rsWindow.setSize(1200, 400);
-		rsWindow.setVisible(true);
-		rsWindow.pack();
-
+		// create a GUI component that loads the image: image.jpg
+		//
+		ImageIcon imageIcon = new ImageIcon(
+				(new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH));
+		test.add(new JLabel(imageIcon));
+		// show the GUI window
+		test.setVisible(true);
+		test.pack();
 	}
-
 }
