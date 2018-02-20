@@ -24,6 +24,10 @@ public class MainGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	private static final Color RED = null;
+
+	private static final int EAST = 0;
+
 	private static JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
 
 	private JPanel panelHome = new JPanel(new BorderLayout());
@@ -60,6 +64,8 @@ public class MainGUI extends JFrame {
 	private JTextField spanisch = new JTextField("--> Spanisch");
 	private JTextField mexikanisch = new JTextField("--> Mexikanisch");
 	private JTextField tuerkisch = new JTextField("--> Tuerkisch");
+	
+	private JButton exit = new JButton();
 
 	private JLabel titel = new JLabel(
 			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
@@ -132,6 +138,8 @@ public class MainGUI extends JFrame {
 		titel.setBounds(550, 60, 550, 60);
 		titel.setFont(new Font("arial", Font.PLAIN, 60));
 		titel.setHorizontalAlignment(JTextField.CENTER);
+		
+		exit.setHorizontalAlignment(JButton.EAST);
 
 		panelHome.setBackground(Color.BLACK);
 
@@ -235,6 +243,7 @@ public class MainGUI extends JFrame {
 		panelHome.add(text3, BorderLayout.CENTER);
 
 		add(titel, BorderLayout.NORTH);
+		add(exit, BorderLayout.NORTH);
 
 		tabbedPane.addTab("Home", panelHome);
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
