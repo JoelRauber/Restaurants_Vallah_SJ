@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.GUI.MainGUI;
+import ch.bbcag.ch.gui.MainGUI;
 import ch.bbcag.ch.user.*;
 
 public class RegisterView extends JFrame {
@@ -40,6 +40,7 @@ public class RegisterView extends JFrame {
 	private JLabel title;
 
 	private JButton senden;
+<<<<<<< HEAD
 	private JButton zurück;
 	
 	public static void insert() {
@@ -61,6 +62,9 @@ public class RegisterView extends JFrame {
 //		u.setPassword("BenMeier");
 //		ud.insertUser(u);
 	}
+=======
+	private JButton zurueck;
+>>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 
 	public static void main(String[] args) {
 		RegisterView register = new RegisterView();
@@ -87,7 +91,7 @@ public class RegisterView extends JFrame {
 		title = new JLabel("Registrieren");
 
 		senden = new JButton("Senden");
-		zurück = new JButton("Zurueck");
+		zurueck = new JButton("Zurueck");
 
 		title.setFont(new Font("Arial", Font.BOLD, 40));
 
@@ -114,8 +118,8 @@ public class RegisterView extends JFrame {
 		fehler.setEditable(false);
 		fehler.setForeground(Color.red);
 		senden.setBackground(Color.gray);
-		zurück.setBackground(Color.gray);
-		zurück.setBounds(130, 420, 200, 30);
+		zurueck.setBackground(Color.gray);
+		zurueck.setBounds(130, 420, 200, 30);
 
 		senden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,7 +141,7 @@ public class RegisterView extends JFrame {
 			}
 		});
 
-		zurück.addActionListener(new ActionListener() {
+		zurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginView login = new LoginView();
 				login.setSize(400, 400);
@@ -160,7 +164,7 @@ public class RegisterView extends JFrame {
 
 		f.add(title);
 		f.add(senden);
-		f.add(zurück);
+		f.add(zurueck);
 
 		f.add(fehler);
 

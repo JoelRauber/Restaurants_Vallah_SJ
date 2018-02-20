@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.GUI.MainGUI;
+import ch.bbcag.ch.gui.MainGUI;
 import ch.bbcag.ch.user.*;
 
 public class LoginView extends JFrame {
