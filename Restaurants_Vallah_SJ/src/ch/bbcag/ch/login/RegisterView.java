@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -52,7 +53,12 @@ public class RegisterView extends JFrame {
 		u.setUsername(userName.getText());
 		u.setPassword(new String(password.getPassword()));
 		ud.insertUser(u);
-		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		u.setName("Meier");
 //		u.setVorname("Ben");
 //		u.setEmail("ben@gmx.ch");
