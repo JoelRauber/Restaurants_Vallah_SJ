@@ -8,8 +8,9 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
-public class ResaurantGUI{
+public class RestaurantGUI{
 	public static void main(String[] args) throws IOException{
 		// Das Fenster wo das GUI aufgebaut wird
 		JFrame window = new JFrame();
@@ -18,10 +19,10 @@ public class ResaurantGUI{
 		try {
 			String latitude = "47.386623";
 			String longitude = "8.516827";
-			String imageURL = "";
-			
+			String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
+					+ "&zoom=11&size=200x200&scale=2&maptype=roadmap";
 			String mapFile ="map.jpg";
-			
+			 
 			URL url = new URL(imageURL);
 			InputStream input =  url.openStream();
 			OutputStream output = new FileOutputStream(mapFile);
@@ -47,9 +48,15 @@ public class ResaurantGUI{
 		}
 		
 		ImageIcon map = new ImageIcon(
-				(new ImageIcon("iamge.jpg")).getImage().getScaledInstance(300, 400, java.awt.Image.SCALE_SMOOTH));
+				(new ImageIcon("map.jpg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
+		
+		
+		
+		//map.setHorizontalTextPosition(SwingConstants.RIGHT);	
 		window.add(new JLabel(map));
+		
 		window.setVisible(true);
+		window.pack();
 	
 		
 		
