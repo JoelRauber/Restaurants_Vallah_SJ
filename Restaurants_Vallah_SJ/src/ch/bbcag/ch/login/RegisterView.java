@@ -40,8 +40,6 @@ public class RegisterView extends JFrame {
 	private JLabel title;
 
 	private JButton senden;
-<<<<<<< HEAD
-	private JButton zurück;
 	
 	public static void insert() {
 		User u = new User();
@@ -62,9 +60,7 @@ public class RegisterView extends JFrame {
 //		u.setPassword("BenMeier");
 //		ud.insertUser(u);
 	}
-=======
 	private JButton zurueck;
->>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 
 	public static void main(String[] args) {
 		RegisterView register = new RegisterView();
