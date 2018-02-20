@@ -83,7 +83,7 @@ public class MainGUI extends JFrame {
 		for (Restaurant restaurant : ud.getAllRestaurants()) {
 			JButton weiter = new JButton();
 			ImageIcon icon = new ImageIcon("restaurantBild.jpeg");
-			weiter.setText("<html><center>*******************************************<br><br>" + restaurant.getName() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
+			weiter.setText("<html><center><br><br><br><br><br><br><br>*******************************************<br><br>" + restaurant.getName() + "<br><br>" + restaurant.getLink() +" <br><br> "+ restaurant.getStrasse() + " " + restaurant.getHnummer() +" <br>" + restaurant.getOrt() + "<br>"+ restaurant.getLand() +"<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
 			weiter.setIcon(icon);
 			weiter.setBackground(new Color(238, 238, 238));
 			weiter.setBorder(null);
