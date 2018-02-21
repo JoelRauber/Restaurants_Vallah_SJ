@@ -18,6 +18,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import ch.bbc.ch.listener.OpenDetailsViewActionListener;
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.login.LoginView;
 import ch.bbcag.ch.restaurant.Restaurant;
@@ -108,16 +109,8 @@ public class MainGUI extends JFrame {
 			weiter.setBackground(new Color(238, 238, 238));
 			weiter.setBorder(null);
 			
-			weiter.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					ResaurantGUI res = new ResaurantGUI();
-					res.setSize(800, 800);
-					res.setVisible(true);
-					dispose();
-					res.subTitel.setText(restaurant.toString());
-				}
-			});
-			
+			weiter.addActionListener(new OpenDetailsViewActionListener(this, restaurant.toString()));
+			revalidate();
 			switch (restaurant.getTyp()) {
 			case ASIATISCH:
 				contentPanelAsiatisch.add(weiter);
@@ -335,7 +328,8 @@ public class MainGUI extends JFrame {
 
 		add(titel, BorderLayout.NORTH);
 		add(login);
-
+		tabbedPane.removeAll();
+		
 		tabbedPane.addTab("Home", panelHome);
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
 		tabbedPane.addTab("Afrikanisch", panelAfrikanisch);
