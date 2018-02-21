@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import ch.bbcag.ch.login.LoginView;
 
 public class ResaurantGUI extends JFrame {
 	/**
@@ -33,9 +37,9 @@ public class ResaurantGUI extends JFrame {
 	static ImageIcon map = new ImageIcon(
 			(new ImageIcon("image.jpg")).getImage().getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH));
 	static JButton back = new JButton("Back");
-	static JTextField info = new JTextField(
-			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-	static JTextField subTitel = new JTextField("Burgerking");
+//	static JTextField info = new JTextField(
+//			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+	JTextField subTitel = new JTextField("");
 	public static void main(String[] args) throws IOException {
 		ResaurantGUI main = new ResaurantGUI();
 		main.setSize(800, 800);
@@ -75,7 +79,17 @@ public class ResaurantGUI extends JFrame {
 
 		add(new JLabel(map), BorderLayout.EAST);
 		add(new JLabel(restaurant), BorderLayout.WEST);
-	
+		
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainGUI login = new MainGUI();
+				login.setSize(1600, 800);
+				login.setVisible(true);
+				dispose();
+			}
+		});
+		
+		
 		// add(back);
 		setVisible(true);
 		// setPreferredSize(new Dimension(800, 800));
@@ -87,13 +101,14 @@ public class ResaurantGUI extends JFrame {
 		titel.setHorizontalAlignment(JTextField.CENTER);
 		
 		subTitel.setHorizontalAlignment(JTextField.CENTER);
+		subTitel.setSize(500, 500);
 		subTitel.setEditable(false);
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
 
 
 		
-		add(info);
+//		add(info);
 		add(titel, BorderLayout.NORTH);
 		add(subTitel);
 		add(content, BorderLayout.SOUTH);

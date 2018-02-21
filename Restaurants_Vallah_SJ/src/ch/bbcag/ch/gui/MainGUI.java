@@ -54,7 +54,7 @@ public class MainGUI extends JFrame {
 	private JPanel contentPanelSpanisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelMexikanisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelTuerkisch = new JPanel(new GridLayout(2, 3));
-	private JPanel contentPanelSearch = new JPanel(new GridLayout(2, 3));
+	private JPanel contentPanelSearch = new JPanel(new GridLayout(3, 3));
 
 	private JTextField asiatisch = new JTextField("--> Asiatisch");
 	private JTextField afrikanisch = new JTextField("--> Afrikanisch");
@@ -69,7 +69,7 @@ public class MainGUI extends JFrame {
 	private JTextField search = new JTextField("--> Search");
 	private JTextField searchfield = new JTextField();
 
-	private JLabel searchdescription = new JLabel();
+//	private JLabel searchdescription = new JLabel();
 	private JButton login = new JButton();
 
 	private JButton searchbutton = new JButton();
@@ -105,7 +105,17 @@ public class MainGUI extends JFrame {
 			weiter.setIcon(icon);
 			weiter.setBackground(new Color(238, 238, 238));
 			weiter.setBorder(null);
-
+			
+			weiter.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ResaurantGUI res = new ResaurantGUI();
+					res.setSize(800, 800);
+					res.setVisible(true);
+					dispose();
+					res.subTitel.setText(restaurant.toString());
+				}
+			});
+			
 			switch (restaurant.getTyp()) {
 			case ASIATISCH:
 				contentPanelAsiatisch.add(weiter);
@@ -185,11 +195,12 @@ public class MainGUI extends JFrame {
 					weiter.setBackground(new Color(238, 238, 238));
 					weiter.setBorder(null);
 					System.out.println("test2");
-					contentPanelSearch.add(weiter);
+					contentPanelSearch.add(weiter, BorderLayout.SOUTH);
 				}
 				ConnectionFactory.getInstance().closeConnection();
 			}
 		});
+		
 		
 		panelHome.setBackground(Color.BLACK);
 
@@ -216,10 +227,10 @@ public class MainGUI extends JFrame {
 
 		search.setFont(new Font("arial", Font.PLAIN, 35));
 
-		searchdescription.setLocation(600, 50);
-		searchdescription.setSize(600, 30);
-		searchdescription.setText("Welches Restaurant in Zürich wollen Sie suchen? ");
-		searchdescription.setFont(new Font("arial", Font.PLAIN, 15));
+//		searchdescription.setLocation(600, 50);
+//		searchdescription.setSize(600, 30);
+//		searchdescription.setText("Welches Restaurant in Zürich wollen Sie suchen? ");
+//		searchdescription.setFont(new Font("arial", Font.PLAIN, 15));
 
 		searchfield.setLocation(450, 100);
 		searchfield.setSize(600, 30);
@@ -300,10 +311,10 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(spanisch, BorderLayout.NORTH);
 		panelMexikanisch.add(mexikanisch, BorderLayout.NORTH);
 		panelTuerkisch.add(tuerkisch, BorderLayout.NORTH);
-		panelSearch.add(search, BorderLayout.NORTH);
-		panelSearch.add(searchfield);
-		panelSearch.add(searchdescription);
-		panelSearch.add(searchbutton);
+		panelSearch.add(search, BorderLayout.SOUTH);
+		panelSearch.add(searchfield, BorderLayout.SOUTH);
+//		panelSearch.add(searchdescription, BorderLayout.CENTER);
+		panelSearch.add(searchbutton, BorderLayout.SOUTH);
 
 		panelAsiatisch.add(contentPanelAsiatisch, BorderLayout.CENTER);
 		panelAfrikanisch.add(contentPanelAfrikanisch, BorderLayout.CENTER);
