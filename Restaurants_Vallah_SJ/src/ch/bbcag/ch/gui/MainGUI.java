@@ -43,6 +43,7 @@ public class MainGUI extends JFrame {
 	private JPanel panelMexikanisch = new JPanel(new BorderLayout());
 	private JPanel panelTuerkisch = new JPanel(new BorderLayout());
 	private JPanel panelSearch = new JPanel(new BorderLayout());
+	private JPanel panelSearch2 = new JPanel(new BorderLayout());
 
 	// private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
@@ -315,7 +316,7 @@ public class MainGUI extends JFrame {
 //		panelSearch.add(search, BorderLayout.SOUTH);
 		panelSearch.add(searchfield, BorderLayout.NORTH);
 //		panelSearch.add(searchdescription, BorderLayout.CENTER);
-		panelSearch.add(searchbutton, BorderLayout.SOUTH);
+		panelSearch2.add(searchbutton, BorderLayout.NORTH);
 
 		panelAsiatisch.add(contentPanelAsiatisch, BorderLayout.CENTER);
 		panelAfrikanisch.add(contentPanelAfrikanisch, BorderLayout.CENTER);
@@ -327,7 +328,8 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(contentPanelSpanisch, BorderLayout.CENTER);
 		panelMexikanisch.add(contentPanelMexikanisch, BorderLayout.CENTER);
 		panelTuerkisch.add(contentPanelTuerkisch, BorderLayout.CENTER);
-		panelSearch.add(contentPanelSearch, BorderLayout.CENTER);
+		panelSearch2.add(contentPanelSearch, BorderLayout.CENTER);
+		panelSearch.add(panelSearch2, BorderLayout.CENTER);
 
 		panelHome.add(text3, BorderLayout.CENTER);
 

@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -35,17 +36,19 @@ public class ResaurantGUI extends JFrame {
 	static ImageIcon restaurant = new ImageIcon(
 			(new ImageIcon("resturantBild.jpeg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
 	static ImageIcon map = new ImageIcon(
-			(new ImageIcon("image.jpg")).getImage().getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH));
+			(new ImageIcon("image.jpg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
 	static JButton back = new JButton("Back");
 //	static JTextField info = new JTextField(
 //			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-	JTextField subTitel = new JTextField("");
+	JTextArea subTitel = new JTextArea();
 	public static void main(String[] args) throws IOException {
 		ResaurantGUI main = new ResaurantGUI();
 		main.setSize(800, 800);
 		main.setVisible(true);
 
 	}
+	static JLabel map1 = new JLabel(map, JLabel.CENTER);
+	static JLabel icon = new JLabel(restaurant, JLabel.CENTER);
 
 	public ResaurantGUI() {
 
@@ -76,9 +79,9 @@ public class ResaurantGUI extends JFrame {
 			System.exit(1);
 
 		}
-
-		add(new JLabel(map), BorderLayout.EAST);
-		add(new JLabel(restaurant), BorderLayout.WEST);
+		
+//		add(new JLabel(map));
+		//add(new JLabel(restaurant), BorderLayout.WEST);
 		
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -100,18 +103,20 @@ public class ResaurantGUI extends JFrame {
 		titel.setBounds(300, 200, 100, 200);
 		titel.setHorizontalAlignment(JTextField.CENTER);
 		
-		subTitel.setHorizontalAlignment(JTextField.CENTER);
-		subTitel.setSize(500, 500);
+		
+		
+//		subTitel.setHorizontalAlignment(JTextArea.CENTER);
+//		subTitel.setSize(50, 50);
 		subTitel.setEditable(false);
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
-
-.
 		
 //		add(info);
 		add(titel, BorderLayout.NORTH);
-		add(subTitel);
+		add(subTitel, BorderLayout.CENTER);
 		add(content, BorderLayout.SOUTH);
+		add(icon, BorderLayout.WEST);
+		add(map1, BorderLayout.EAST);
 		
 
 		content.add(back);
