@@ -44,9 +44,9 @@ public class RestaurantsJDBCDao implements RestaurantDao {
 			if (rs != null) {
 				rs.close();
 			}
-			if (con != null) {
-				con.close();
-			}
+//			if (con != null) {
+//				con.close();
+//			}
 			return restaurants;
 		} catch (SQLException ex) {
 			throw new RuntimeException(ex);
@@ -97,16 +97,18 @@ public class RestaurantsJDBCDao implements RestaurantDao {
 				List<Restaurant> restaurants = new ArrayList<Restaurant>();
 				Restaurant u = null;
 				String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n"
-						+ "where r.name like \"%?%\" and r.adresse_id = a.id;";
+						+ "where r.name like ? and r.adresse_id = a.id;";
+//				String sql = "select r.*, a.* from restaurant as r, adresse as a\r\n"
+//						+ "where r.adresse_id = a.id and r.name = ?;";
+				
 //				if(con != null) {
 //					System.out.println("true");
 //				}
 				PreparedStatement ps = con.prepareStatement(sql);
-				System.out.println("Test");
-				ps.setString(1, restaurantSearch);
+				System.out.println(con.isClosed());
+				ps.setString(1, "%" + restaurantSearch + "%");
 				System.out.println("test");
 				rs = ps.executeQuery();
-
 				while (rs.next()) {
 					u = new Restaurant();
 					u.setId(rs.getInt("id"));
@@ -116,19 +118,20 @@ public class RestaurantsJDBCDao implements RestaurantDao {
 					u.setNummer(rs.getString("nummer"));
 					u.setKommentar(rs.getString("kommentar"));
 					u.setBewertung(rs.getString("bewertung"));
-					u.setTyp(RestaurantType.valueOf(rs.getString("typ")));
+					u.setTyp(RestaurantType.valueOf(rs.getString("typ").toUpperCase()));
 					u.setStrasse(rs.getString("strasse"));
 					u.setHnummer(rs.getString("hnummer"));
 					u.setOrt(rs.getString("ort"));
 					u.setLand(rs.getString("land"));
 					restaurants.add(u);
+					System.out.println("Tetstt");
 				}
 				if (rs != null) {
 					rs.close();
 				}
-				if (con != null) {
-					con.close();
-				}
+//				if (con != null) {
+//					con.close();
+//				}
 				return restaurants;
 			} catch (SQLException ex) {
 				return null;

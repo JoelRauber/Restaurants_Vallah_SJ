@@ -41,31 +41,27 @@ public class RegisterView extends JFrame {
 	private JLabel title;
 
 	private JButton senden;
-	
+
 	public static void insert() {
 		User u = new User();
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		UserDao ud = new UserJDBCDao(con);
-		
+
 		u.setName(nachname.getText());
 		u.setVorname(vorname.getText());
 		u.setEmail(email.getText());
 		u.setUsername(userName.getText());
 		u.setPassword(new String(password.getPassword()));
 		ud.insertUser(u);
-		try {
-			con.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-//		u.setName("Meier");
-//		u.setVorname("Ben");
-//		u.setEmail("ben@gmx.ch");
-//		u.setUsername("BenMeier");
-//		u.setPassword("BenMeier");
-//		ud.insertUser(u);
+		ConnectionFactory.getInstance().closeConnection();
+		// u.setName("Meier");
+		// u.setVorname("Ben");
+		// u.setEmail("ben@gmx.ch");
+		// u.setUsername("BenMeier");
+		// u.setPassword("BenMeier");
+		// ud.insertUser(u);
 	}
+
 	private JButton zurueck;
 
 	public static void main(String[] args) {

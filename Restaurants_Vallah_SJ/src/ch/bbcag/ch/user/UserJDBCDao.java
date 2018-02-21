@@ -37,9 +37,9 @@ public class UserJDBCDao implements UserDao {
 			if (rs != null) {
 				rs.close();
 			}
-			if (con != null) {
-				con.close();
-			}
+//			if (con != null) {
+//				con.close();
+//			}
 			return users;
 		} catch (SQLException ex) {
 			throw new RuntimeException(ex);

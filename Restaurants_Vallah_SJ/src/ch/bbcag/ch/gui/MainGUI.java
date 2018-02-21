@@ -184,7 +184,7 @@ public class MainGUI extends JFrame {
 									+ "<br><br>*******************************************<br><br<br><br><br><br><br></center></html>");
 					weiter.setBackground(new Color(238, 238, 238));
 					weiter.setBorder(null);
-//					System.out.println("test2");
+					System.out.println("test2");
 					contentPanelSearch.add(weiter);
 				}
 				ConnectionFactory.getInstance().closeConnection();
