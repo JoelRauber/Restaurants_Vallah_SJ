@@ -54,7 +54,7 @@ public class ResaurantGUI extends JFrame {
 			String longitude = "-73.998672";
 
 			String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
-					+ "&zoom=11&size=612x612&scale=2&maptype=roadmap";
+					+ "&zoom=15&size=612x612&scale=2&maptype=roadmap";
 
 			String mapFile = "map.jpg";
 
@@ -106,7 +106,7 @@ public class ResaurantGUI extends JFrame {
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
 
-.
+
 		
 //		add(info);
 		add(titel, BorderLayout.NORTH);
