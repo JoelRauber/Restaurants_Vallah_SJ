@@ -106,7 +106,7 @@ public class ResaurantGUI extends JFrame {
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
 
-
+.
 		
 //		add(info);
 		add(titel, BorderLayout.NORTH);

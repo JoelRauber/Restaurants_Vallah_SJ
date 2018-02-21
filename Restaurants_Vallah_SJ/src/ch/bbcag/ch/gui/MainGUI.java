@@ -2,6 +2,7 @@ package ch.bbcag.ch.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -220,23 +221,23 @@ public class MainGUI extends JFrame {
 
 		afrikanisch.setFont(new Font("arial", Font.PLAIN, 35));
 
-		search.setHorizontalAlignment(JTextField.CENTER);
-		search.setEditable(false);
-		search.setBackground(new Color(238, 238, 238));
-		search.setBorder(null);
-
-		search.setFont(new Font("arial", Font.PLAIN, 35));
+//		search.setHorizontalAlignment(JTextField.CENTER);
+//		search.setEditable(false);
+//		search.setBackground(new Color(238, 238, 238));
+//		search.setBorder(null);
+//
+//		search.setFont(new Font("arial", Font.PLAIN, 35));
 
 //		searchdescription.setLocation(600, 50);
 //		searchdescription.setSize(600, 30);
 //		searchdescription.setText("Welches Restaurant in Zürich wollen Sie suchen? ");
 //		searchdescription.setFont(new Font("arial", Font.PLAIN, 15));
 
-		searchfield.setLocation(450, 100);
+		searchfield.setLocation(450, 800);
 		searchfield.setSize(600, 30);
 
-		searchbutton.setLocation(650, 150);
-		searchbutton.setSize(200, 30);
+//		searchbutton.setLocation(650, 150);
+		searchbutton.setPreferredSize(new Dimension(200, 30));
 		searchbutton.setBackground(new Color(238, 238, 238));
 		// searchbutton.setBorder(null);
 		searchbutton.setText("Suchen");
@@ -311,8 +312,8 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(spanisch, BorderLayout.NORTH);
 		panelMexikanisch.add(mexikanisch, BorderLayout.NORTH);
 		panelTuerkisch.add(tuerkisch, BorderLayout.NORTH);
-		panelSearch.add(search, BorderLayout.SOUTH);
-		panelSearch.add(searchfield, BorderLayout.SOUTH);
+//		panelSearch.add(search, BorderLayout.SOUTH);
+		panelSearch.add(searchfield, BorderLayout.NORTH);
 //		panelSearch.add(searchdescription, BorderLayout.CENTER);
 		panelSearch.add(searchbutton, BorderLayout.SOUTH);
 
