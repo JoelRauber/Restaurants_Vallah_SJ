@@ -75,7 +75,7 @@ public class MainGUI extends JFrame {
 	private JButton searchbutton = new JButton();
 
 	private JLabel titel = new JLabel(
-			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
+			"<html><div style='text-align: Center;'>" + "Restaurants Vallah" + "</div></html>");
 	private JTextField text3 = new JTextField(
 			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
 
