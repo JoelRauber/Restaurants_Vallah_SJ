@@ -23,7 +23,7 @@ public class OpenDetailsViewActionListener implements ActionListener{
 		res.setVisible(true);
 		gui.dispose();
 		gui.setVisible(false);
-		res.subTitel(restaurantInfo);
+		res.subTitel.setText(restaurantInfo);
 	}
 
 }

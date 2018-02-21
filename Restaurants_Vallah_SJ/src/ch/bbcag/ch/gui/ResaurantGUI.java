@@ -21,7 +21,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 import ch.bbcag.ch.login.LoginView;
 
@@ -30,32 +34,38 @@ public class ResaurantGUI extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 
 	private MainGUI gui;
 	private JPanel hWindow = new JPanel(new BorderLayout());
 	private JPanel aWindow = new JPanel(new GridBagLayout());
 	private GridBagConstraints c = new GridBagConstraints();
 	private JLabel titel = new JLabel(
-			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>");
+			"<html><div style='text-align: center;'>" + "Restaurants Vallah" + "</div></html>", JLabel.CENTER);
 	private JPanel content = new JPanel();
 	private ImageIcon restaurant = new ImageIcon(
 			(new ImageIcon("resturantBild.jpeg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
 	private ImageIcon map = new ImageIcon(
-			(new ImageIcon("image.jpg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
+			(new ImageIcon("map.jpg")).getImage().getScaledInstance(200, 200, java.awt.Image.SCALE_SMOOTH));
 	private JButton back = new JButton("Back");
-	private JTextArea subTitel = new JTextArea("fjasdlfjkljalkjkjlllllllllllllllllllllllllllllllllllllllllllll\nasfdasdfasdfadfasdf");
+	public JTextPane subTitel = new JTextPane();
 
 	private JLabel map1 = new JLabel(map, JLabel.CENTER);
 	private JLabel icon = new JLabel(restaurant, JLabel.CENTER);
+	
+	
+
+	
+	
 
 	public ResaurantGUI(MainGUI mainGui) {
 		this.gui = mainGui;
 		try {
-			String latitude = "48.714728";
-			String longitude = "-73.998672";
+			String latitude = "47.370445";
+			String longitude = "8.533135";
 
 			String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
-					+ "&zoom=11&size=612x612&scale=2&maptype=roadmap";
+					+ "&zoom=14&size=612x612&scale=2&maptype=roadmap";
 
 			String mapFile = "map.jpg";
 
@@ -78,8 +88,8 @@ public class ResaurantGUI extends JFrame {
 
 		}
 
-		// add(new JLabel(map));
-		// add(new JLabel(restaurant), BorderLayout.WEST);
+//		 add(new JLabel(map));
+//		 add(new JLabel(restaurant), BorderLayout.WEST);
 
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -97,21 +107,29 @@ public class ResaurantGUI extends JFrame {
 		back.setHorizontalAlignment(SwingConstants.LEFT);
 		// titel.setSize();
 		titel.setFont(new Font("arial", Font.BOLD, 30));
-//		titel.setBounds(300, 200, 100, 200);
-		titel.setHorizontalAlignment(JTextField.CENTER);
+		// titel.setBounds(300, 200, 100, 200);
+		StyledDocument doc = subTitel.getStyledDocument();
+		SimpleAttributeSet center = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+		doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
 		// subTitel.setHorizontalAlignment(JTextArea.CENTER);
 		// subTitel.setSize(50, 50);
 		subTitel.setEditable(false);
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
+		subTitel.setAlignmentX(CENTER_ALIGNMENT);
 		// add(info);
 		add(titel, BorderLayout.NORTH);
-		//TODO: c für icon bearbeiten
+		// TODO: c für icon bearbeiten
+		c.gridx = 10;
+		
 		aWindow.add(icon, c);
-		//TODO: c für subtitle bearbeiten
+		// TODO: c für subtitle bearbeiten
+		c.ipadx = 0;
+		c.ipady = 3;
 		aWindow.add(subTitel, c);
-		//TODO: c für map1 bearbeiten
+		// TODO: c für map1 bearbeiten
 		aWindow.add(map1, c);
 		add(hWindow, BorderLayout.CENTER);
 		hWindow.add(aWindow, BorderLayout.CENTER);
@@ -119,10 +137,6 @@ public class ResaurantGUI extends JFrame {
 
 		content.add(back);
 
-	}
-
-	public void subTitel(String subTitle) {
-		this.subTitel = new JTextArea(subTitle);
 	}
 
 }

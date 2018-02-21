@@ -162,7 +162,7 @@ public class Restaurant {
 
 	public String toString() {
 		String result = "";
-		result += "Restaurants: " + getName() + "\n";
+		result += "\nRestaurants: " + getName() + "\n";
 		result += "Beschreibung: " +getBeschreibung() + "\n";
 		result += "Link: " + getLink() + "\n";
 		result += "Nummer: " + getNummer() + "\n";

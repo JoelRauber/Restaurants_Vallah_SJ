@@ -18,6 +18,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import ch.bbc.ch.listener.OpenDetails;
 import ch.bbc.ch.listener.OpenDetailsViewActionListener;
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.login.LoginView;
@@ -179,6 +180,7 @@ public class MainGUI extends JFrame {
 				Connection con1 = ConnectionFactory.getInstance().getConnection();
 				RestaurantDao ud1 = new RestaurantsJDBCDao(con1);
 				for (Restaurant restaurant : ud1.getAllBySearch(searchfield.getText())) {
+					
 					System.out.println("test");
 					JButton weiter = new JButton();
 					weiter.setText(
@@ -191,6 +193,8 @@ public class MainGUI extends JFrame {
 					weiter.setBorder(null);
 					System.out.println("test2");
 					contentPanelSearch.add(weiter, BorderLayout.SOUTH);
+					weiter.addActionListener(new OpenDetails(this, restaurant.toString()));
+					revalidate();
 				}
 				ConnectionFactory.getInstance().closeConnection();
 			}
