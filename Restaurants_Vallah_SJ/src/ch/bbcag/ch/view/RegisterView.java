@@ -117,8 +117,8 @@ public class RegisterView extends JFrame {
 
 		senden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(new String(password.getPassword()).equals(""));
-				System.out.println(userName.getText().equals("") == false);
+//				System.out.println(new String(password.getPassword()).equals(""));
+//				System.out.println(userName.getText().equals("") == false);
 				if (new String(password.getPassword()).equals("") == false) {
 					if (userName.getText().equals("") == false) {
 						MainView main = new MainView();
