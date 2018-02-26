@@ -18,6 +18,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import ch.bbc.ch.listener.OpenDetails;
+import ch.bbc.ch.listener.OpenDetailsViewActionListener;
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.login.LoginView;
 import ch.bbcag.ch.restaurant.Restaurant;
@@ -25,7 +27,14 @@ import ch.bbcag.ch.restaurant.RestaurantDao;
 import ch.bbcag.ch.restaurant.RestaurantType;
 import ch.bbcag.ch.restaurant.RestaurantsJDBCDao;
 
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 public class MainGUI extends JFrame {
+	
+	private static MainGUI m;
 
 	private static final long serialVersionUID = 1L;
 
@@ -43,6 +52,7 @@ public class MainGUI extends JFrame {
 	private JPanel panelMexikanisch = new JPanel(new BorderLayout());
 	private JPanel panelTuerkisch = new JPanel(new BorderLayout());
 	private JPanel panelSearch = new JPanel(new BorderLayout());
+	private JPanel panelSearch2 = new JPanel(new BorderLayout());
 
 	// private JPanel contentPanelAll = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelAsiatisch = new JPanel(new GridLayout(2, 3));
@@ -79,13 +89,27 @@ public class MainGUI extends JFrame {
 			"<html><div style='text-align: Center;'>" + "Restaurants Vallah" + "</div></html>");
 	private JTextField text3 = new JTextField(
 			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		MainGUI.m = new MainGUI();
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		MainGUI.m = null;
+	}
+	
+	/**
+	 * Test {
+	 * @param args
+	 */
+	@Test
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
 		main.setSize(1600, 800);
 		main.setVisible(true);
 	}
-
+	
 	public MainGUI() {
 
 		toFront();
@@ -107,16 +131,8 @@ public class MainGUI extends JFrame {
 			weiter.setBackground(new Color(238, 238, 238));
 			weiter.setBorder(null);
 			
-			weiter.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					ResaurantGUI res = new ResaurantGUI();
-					res.setSize(800, 800);
-					res.setVisible(true);
-					dispose();
-					res.subTitel.setText(restaurant.toString());
-				}
-			});
-			
+			weiter.addActionListener(new OpenDetailsViewActionListener(this, restaurant.toString()));
+			revalidate();
 			switch (restaurant.getTyp()) {
 			case ASIATISCH:
 				contentPanelAsiatisch.add(weiter);
@@ -185,6 +201,7 @@ public class MainGUI extends JFrame {
 				Connection con1 = ConnectionFactory.getInstance().getConnection();
 				RestaurantDao ud1 = new RestaurantsJDBCDao(con1);
 				for (Restaurant restaurant : ud1.getAllBySearch(searchfield.getText())) {
+					
 					System.out.println("test");
 					JButton weiter = new JButton();
 					weiter.setText(
@@ -197,6 +214,8 @@ public class MainGUI extends JFrame {
 					weiter.setBorder(null);
 					System.out.println("test2");
 					contentPanelSearch.add(weiter, BorderLayout.SOUTH);
+//					weiter.addActionListener(new OpenDetails(this, restaurant.toString()));
+					revalidate();
 				}
 				ConnectionFactory.getInstance().closeConnection();
 			}
@@ -315,7 +334,7 @@ public class MainGUI extends JFrame {
 //		panelSearch.add(search, BorderLayout.SOUTH);
 		panelSearch.add(searchfield, BorderLayout.NORTH);
 //		panelSearch.add(searchdescription, BorderLayout.CENTER);
-		panelSearch.add(searchbutton, BorderLayout.SOUTH);
+		panelSearch2.add(searchbutton, BorderLayout.NORTH);
 
 		panelAsiatisch.add(contentPanelAsiatisch, BorderLayout.CENTER);
 		panelAfrikanisch.add(contentPanelAfrikanisch, BorderLayout.CENTER);
@@ -327,13 +346,15 @@ public class MainGUI extends JFrame {
 		panelSpanisch.add(contentPanelSpanisch, BorderLayout.CENTER);
 		panelMexikanisch.add(contentPanelMexikanisch, BorderLayout.CENTER);
 		panelTuerkisch.add(contentPanelTuerkisch, BorderLayout.CENTER);
-		panelSearch.add(contentPanelSearch, BorderLayout.CENTER);
+		panelSearch2.add(contentPanelSearch, BorderLayout.CENTER);
+		panelSearch.add(panelSearch2, BorderLayout.CENTER);
 
 		panelHome.add(text3, BorderLayout.CENTER);
 
 		add(titel, BorderLayout.NORTH);
 		add(login);
-
+		tabbedPane.removeAll();
+		
 		tabbedPane.addTab("Home", panelHome);
 		tabbedPane.addTab("Asiatisch", panelAsiatisch);
 		tabbedPane.addTab("Afrikanisch", panelAfrikanisch);
