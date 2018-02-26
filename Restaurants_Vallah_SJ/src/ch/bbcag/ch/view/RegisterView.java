@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,14 +11,13 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ch.bbcag.ch.controller.RegisterController;
 import ch.bbcag.ch.model.User;
-import ch.bbcag.ch.persistance.ConnectionFactory;
-import ch.bbcag.ch.persistance.UserDao;
-import ch.bbcag.ch.persistance.UserJDBCDao;
 
 public class RegisterView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private final RegisterController REGISTER_CONTROLLER = RegisterController.getRegisterController();
 
 	private static JTextField userName;
 	private static JTextField vorname;
@@ -37,26 +35,6 @@ public class RegisterView extends JFrame {
 	private JLabel title;
 
 	private JButton senden;
-
-	public static void insert() {
-		User u = new User();
-		Connection con = ConnectionFactory.getInstance().getConnection();
-		UserDao ud = new UserJDBCDao(con);
-
-		u.setName(nachname.getText());
-		u.setVorname(vorname.getText());
-		u.setEmail(email.getText());
-		u.setUsername(userName.getText());
-		u.setPassword(new String(password.getPassword()));
-		ud.insertUser(u);
-		ConnectionFactory.getInstance().closeConnection();
-		// u.setName("Meier");
-		// u.setVorname("Ben");
-		// u.setEmail("ben@gmx.ch");
-		// u.setUsername("BenMeier");
-		// u.setPassword("BenMeier");
-		// ud.insertUser(u);
-	}
 
 	private JButton zurueck;
 
@@ -125,7 +103,13 @@ public class RegisterView extends JFrame {
 						main.setSize(1600, 800);
 						main.setVisible(true);
 						setVisible(false);
-						insert();
+						User u = new User();
+						u.setName(nachname.getText());
+						u.setVorname(vorname.getText());
+						u.setEmail(email.getText());
+						u.setUsername(userName.getText());
+						u.setPassword(new String(password.getPassword()));
+						REGISTER_CONTROLLER.verifyRegister(u);
 					} else {
 						fehler.setText("Mit Sterne bitte ausfüllen");
 					}
