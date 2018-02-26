@@ -16,21 +16,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-
-import ch.bbc.ch.listener.OpenDetails;
+//import javax.swing.border.Border;
+//
+//import ch.bbc.ch.listener.OpenDetails;
 import ch.bbc.ch.listener.OpenDetailsViewActionListener;
 import ch.bbcag.ch.ConnectionFactory;
 import ch.bbcag.ch.login.LoginView;
 import ch.bbcag.ch.restaurant.Restaurant;
 import ch.bbcag.ch.restaurant.RestaurantDao;
-import ch.bbcag.ch.restaurant.RestaurantType;
+//import ch.bbcag.ch.restaurant.RestaurantType;
 import ch.bbcag.ch.restaurant.RestaurantsJDBCDao;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+//import org.junit.AfterClass;
+//import org.junit.Assert;
+//import org.junit.BeforeClass;
+//import org.junit.Test;
 
 public class MainGUI extends JFrame {
 	

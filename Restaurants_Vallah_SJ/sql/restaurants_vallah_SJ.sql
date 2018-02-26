@@ -55,7 +55,7 @@ character set utf8
 fields terminated by ';'
 ignore 1 Rows (id, strasse, hnummer, ort, land);
 
-load data local infile 'T:\\_Team\\Informatiker 17\\zraubj\\10 - Anwendungsentwicklung\\AE700 - Projektarbeit\\Datenbank\\Restaurant.csv'
+load data local infile 'T:\\_Team\\Informatiker 17\\zraubj\\10 - Anwendungsentwicklung\\AE700 - Projektarbeit\\Datenbank\\Restaurant4.csv'
 into table restaurant
 character set utf8
 fields terminated by ';'
@@ -67,7 +67,18 @@ select * from adresse;
 
 select * from restaurant;
 
-delete from user where id = 4;
+select r.*, a.* from restaurant as r, adresse as a
+where r.name like "%a%" and r.adresse_id = a.id;
+
+delete from adresse;
+
+delete from restaurant;
+
+insert into user(vorname, name, eMail, userName, passwort)
+values("joel", "rauber", "joel@hotmail.com", "JoelRauber", "hallo");
+
+
+
 
 drop table adresse;
 drop table restaurant;
