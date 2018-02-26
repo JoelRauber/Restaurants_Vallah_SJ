@@ -14,6 +14,7 @@ public class RestaurantController {
 	private Connection con;
 	private RestaurantDao rd;
 	
+	
 	private RestaurantController() {
 		con = ConnectionFactory.getInstance().getConnection();
 		rd = new RestaurantJDBCDao(con);
