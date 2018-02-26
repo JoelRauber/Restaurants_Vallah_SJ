@@ -1,8 +1,11 @@
-package ch.bbcag.ch.user;
+package ch.bbcag.ch.view;
 
 import java.sql.Connection;
 
-import ch.bbcag.ch.ConnectionFactory;
+import ch.bbcag.ch.model.User;
+import ch.bbcag.ch.persistance.ConnectionFactory;
+import ch.bbcag.ch.persistance.UserDao;
+import ch.bbcag.ch.persistance.UserJDBCDao;
 
 public class UserView {
 

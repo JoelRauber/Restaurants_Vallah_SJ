@@ -1,6 +1,8 @@
-package ch.bbcag.ch.restaurant;
+package ch.bbcag.ch.persistance;
 
 import java.util.List;
+
+import ch.bbcag.ch.model.Restaurant;
 
 public interface RestaurantDao {
 	public abstract List<Restaurant> getAllRestaurants();

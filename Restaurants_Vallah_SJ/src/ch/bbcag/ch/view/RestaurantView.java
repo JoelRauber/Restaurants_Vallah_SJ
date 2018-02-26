@@ -1,4 +1,4 @@
-package ch.bbcag.ch.gui;
+package ch.bbcag.ch.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,14 +24,14 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
-public class ResaurantGUI extends JFrame {
+public class RestaurantView extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
 
-	private MainGUI gui;
+	private MainView gui;
 	private JPanel hWindow = new JPanel(new BorderLayout());
 	private JPanel aWindow = new JPanel(new GridBagLayout());
 	private GridBagConstraints c = new GridBagConstraints();
@@ -53,7 +53,7 @@ public class ResaurantGUI extends JFrame {
 	
 	
 
-	public ResaurantGUI(MainGUI mainGui) {
+	public RestaurantView(MainView mainGui) {
 		this.gui = mainGui;
 		try {
 			String latitude = "47.370445";

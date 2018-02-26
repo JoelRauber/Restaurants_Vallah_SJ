@@ -1,4 +1,4 @@
-package ch.bbcag.ch.user;
+package ch.bbcag.ch.model;
 
 public class User {
 	private int id;

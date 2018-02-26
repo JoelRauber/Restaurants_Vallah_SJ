@@ -1,10 +1,9 @@
-package ch.bbcag.ch.login;
+package ch.bbcag.ch.view;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,13 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.gui.MainGUI;
-import ch.bbcag.ch.user.*;
+import ch.bbcag.ch.controller.UserController;
+import ch.bbcag.ch.model.User;
 
 public class LoginView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+
+	private final UserController USER_CONTROLLER = UserController.getUserController();
 
 	private JTextField userName;
 	private JPasswordField password;
@@ -29,8 +29,6 @@ public class LoginView extends JFrame {
 	private JButton senden;
 	private JButton registrieren;
 	private User u;
-	private Connection con;
-	private UserDao ud;
 
 	public static void main(String[] args) {
 		LoginView login = new LoginView();
@@ -48,9 +46,6 @@ public class LoginView extends JFrame {
 		title = new JLabel("Login");
 		senden = new JButton("Login");
 		registrieren = new JButton("Registrieren");
-		u = new User();
-		con = ConnectionFactory.getInstance().getConnection();
-		ud = new UserJDBCDao(con);
 
 		title.setFont(new Font("Arial", Font.BOLD, 40));
 		userName.setBounds(130, 120, 200, 30);
@@ -71,45 +66,29 @@ public class LoginView extends JFrame {
 
 		senden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for (User user : ud.getAllUsers()) {
-
-					if (userName.getText().equals(user.getUsername())) {
-						System.out.println(user.getPassword().trim());
-						System.out.println(password.getPassword());
-						System.out.println(user.getPassword().trim().length());
-						System.out.println(password.getPassword().length);
-						char[] formPassword = password.getPassword();
-						String dbPassword = user.getPassword().trim();
-						if (dbPassword.equals(new String(formPassword))) {
-							ConnectionFactory.getInstance().closeConnection();
-							MainGUI main = new MainGUI();
-							main.setSize(1600, 800);
-							main.setVisible(true);
-							setVisible(false);
-						} else {
-							fehler.setText("Falsches Passwort");
-						}
-					} else {
-						fehler.setText("Falscher User");
-
-					}
-
-					// ConnectionFactory.getInstance().closeConnection();
+				if (USER_CONTROLLER.verifyLogin(userName.getText(), new String(password.getPassword()))) {
+					MainView main = new MainView();
+					main.setSize(1600, 800);
+					main.setVisible(true);
+					setVisible(false);
+				} else {
+					fehler.setText("Falscher Benutzername oder falsches Passwort!");
+					System.err.println("Falscher Benutzername oder falsches Passwort!");
 				}
-
 			}
-
 		});
+
 		registrieren.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
-				ConnectionFactory.getInstance().closeConnection();
+//				ConnectionFactory.getInstance().closeConnection();
 				RegisterView register = new RegisterView();
 				register.setSize(410, 550);
 				register.setVisible(true);
-				register.setVisible(false);
 				setVisible(false);
 			}
 		});
+		
 		add(lUserName);
 		add(lPassword);
 		add(userName);

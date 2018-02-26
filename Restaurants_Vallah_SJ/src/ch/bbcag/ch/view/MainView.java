@@ -1,4 +1,4 @@
-package ch.bbcag.ch.gui;
+package ch.bbcag.ch.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,23 +20,23 @@ import javax.swing.JTextField;
 //
 //import ch.bbc.ch.listener.OpenDetails;
 import ch.bbc.ch.listener.OpenDetailsViewActionListener;
-import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.login.LoginView;
-import ch.bbcag.ch.restaurant.Restaurant;
-import ch.bbcag.ch.restaurant.RestaurantDao;
-//import ch.bbcag.ch.restaurant.RestaurantType;
-import ch.bbcag.ch.restaurant.RestaurantsJDBCDao;
+import ch.bbcag.ch.controller.RestaurantController;
+import ch.bbcag.ch.controller.UserController;
+import ch.bbcag.ch.model.Restaurant;
+import ch.bbcag.ch.persistance.ConnectionFactory;
+import ch.bbcag.ch.persistance.RestaurantDao;
+import ch.bbcag.ch.persistance.RestaurantJDBCDao;
 
 //import org.junit.AfterClass;
 //import org.junit.Assert;
 //import org.junit.BeforeClass;
 //import org.junit.Test;
 
-public class MainGUI extends JFrame {
-	
-	private static MainGUI m;
+public class MainView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	
+	private final RestaurantController RESTAURANT_CONTROLLER = RestaurantController.getRestaurantController();
 
 	private static JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
 
@@ -77,11 +77,10 @@ public class MainGUI extends JFrame {
 	private JTextField spanisch = new JTextField("--> Spanisch");
 	private JTextField mexikanisch = new JTextField("--> Mexikanisch");
 	private JTextField tuerkisch = new JTextField("--> Tuerkisch");
-	private JTextField search = new JTextField("--> Search");
 	private JTextField searchfield = new JTextField();
 
 //	private JLabel searchdescription = new JLabel();
-	private JButton login = new JButton();
+	private JButton logout = new JButton();
 
 	private JButton searchbutton = new JButton();
 
@@ -105,20 +104,18 @@ public class MainGUI extends JFrame {
 //	 */
 //	@Test
 	public static void main(String[] args) {
-		MainGUI main = new MainGUI();
+		MainView main = new MainView();
 		main.setSize(1600, 800);
 		main.setVisible(true);
 	}
 	
-	public MainGUI() {
+	public MainView() {
 
 		toFront();
 
 		// ***************************
-		Connection con = ConnectionFactory.getInstance().getConnection();
-		RestaurantDao ud = new RestaurantsJDBCDao(con);
 
-		for (Restaurant restaurant : ud.getAllRestaurants()) {
+		for (Restaurant restaurant : RESTAURANT_CONTROLLER.getAllRestaurants()) {
 			JButton weiter = new JButton();
 			ImageIcon icon = new ImageIcon("restaurantBild.jpeg");
 			weiter.setText(
@@ -177,15 +174,15 @@ public class MainGUI extends JFrame {
 		titel.setFont(new Font("arial", Font.PLAIN, 60));
 		titel.setHorizontalAlignment(JTextField.CENTER);
 
-		login.setSize(107, 70);
-		login.setLocation(0, 0);
-		login.setBackground(new Color(238, 238, 238));
+		logout.setSize(107, 70);
+		logout.setLocation(0, 0);
+		logout.setBackground(new Color(238, 238, 238));
 		// login.setBorder(null);
-		login.setText("Abmelden");
-		login.setFont(new Font("arial", Font.PLAIN, 15));
-		login.setVisible(true);
+		logout.setText("Abmelden");
+		logout.setFont(new Font("arial", Font.PLAIN, 15));
+		logout.setVisible(true);
 
-		login.addActionListener(new ActionListener() {
+		logout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginView login = new LoginView();
 				login.setSize(400, 400);
@@ -193,14 +190,10 @@ public class MainGUI extends JFrame {
 				dispose();
 			}
 		});
-		ConnectionFactory.getInstance().closeConnection();
-		
 		
 		searchbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Connection con1 = ConnectionFactory.getInstance().getConnection();
-				RestaurantDao ud1 = new RestaurantsJDBCDao(con1);
-				for (Restaurant restaurant : ud1.getAllBySearch(searchfield.getText())) {
+				for (Restaurant restaurant : RESTAURANT_CONTROLLER.getAllBySearch(searchfield.getText())){
 					
 					System.out.println("test");
 					JButton weiter = new JButton();
@@ -352,7 +345,7 @@ public class MainGUI extends JFrame {
 		panelHome.add(text3, BorderLayout.CENTER);
 
 		add(titel, BorderLayout.NORTH);
-		add(login);
+		add(logout);
 		tabbedPane.removeAll();
 		
 		tabbedPane.addTab("Home", panelHome);

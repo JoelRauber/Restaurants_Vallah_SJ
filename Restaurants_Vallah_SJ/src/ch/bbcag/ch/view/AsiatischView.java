@@ -1,11 +1,4 @@
-package ch.bbcag.ch.gui;
-
-
-import java.sql.Connection;
-
-import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.restaurant.RestaurantDao;
-import ch.bbcag.ch.restaurant.Restaurant;
+package ch.bbcag.ch.view;
 
 public class AsiatischView {
 

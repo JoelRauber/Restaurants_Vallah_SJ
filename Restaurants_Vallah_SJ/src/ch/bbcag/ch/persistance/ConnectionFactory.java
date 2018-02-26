@@ -1,4 +1,4 @@
-package ch.bbcag.ch;
+package ch.bbcag.ch.persistance;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

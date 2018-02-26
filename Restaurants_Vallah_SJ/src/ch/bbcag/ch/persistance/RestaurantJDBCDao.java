@@ -1,4 +1,4 @@
-package ch.bbcag.ch.restaurant;
+package ch.bbcag.ch.persistance;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,11 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantsJDBCDao implements RestaurantDao {
+import ch.bbcag.ch.model.Restaurant;
+import ch.bbcag.ch.model.RestaurantType;
+
+public class RestaurantJDBCDao implements RestaurantDao {
 
 	private Connection con = null;
 
-	public RestaurantsJDBCDao(Connection connection) {
+	public RestaurantJDBCDao(Connection connection) {
 		con = connection;
 	}
 

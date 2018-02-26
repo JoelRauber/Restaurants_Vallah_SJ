@@ -1,11 +1,10 @@
-package ch.bbcag.ch.login;
+package ch.bbcag.ch.view;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,18 +12,15 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import ch.bbcag.ch.ConnectionFactory;
-import ch.bbcag.ch.gui.MainGUI;
-import ch.bbcag.ch.user.*;
+import ch.bbcag.ch.model.User;
+import ch.bbcag.ch.persistance.ConnectionFactory;
+import ch.bbcag.ch.persistance.UserDao;
+import ch.bbcag.ch.persistance.UserJDBCDao;
 
 public class RegisterView extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private JFrame f;
 	private static JTextField userName;
 	private static JTextField vorname;
 	private static JTextField nachname;
@@ -72,7 +68,7 @@ public class RegisterView extends JFrame {
 
 	public RegisterView() {
 
-		f = new JFrame("Registrieren");
+		this.setTitle("Registrieren");
 		userName = new JTextField();
 		vorname = new JTextField();
 		nachname = new JTextField();
@@ -125,10 +121,10 @@ public class RegisterView extends JFrame {
 				System.out.println(userName.getText().equals("") == false);
 				if (new String(password.getPassword()).equals("") == false) {
 					if (userName.getText().equals("") == false) {
-						MainGUI main = new MainGUI();
+						MainView main = new MainView();
 						main.setSize(1600, 800);
 						main.setVisible(true);
-						f.setVisible(false);
+						setVisible(false);
 						insert();
 					} else {
 						fehler.setText("Mit Sterne bitte ausfüllen");
@@ -144,31 +140,31 @@ public class RegisterView extends JFrame {
 				LoginView login = new LoginView();
 				login.setSize(400, 400);
 				login.setVisible(true);
-				f.setVisible(false);
+				setVisible(false);
 			}
 		});
 
-		f.add(lUserName);
-		f.add(lPassword);
-		f.add(lVorname);
-		f.add(lNachname);
-		f.add(lEMail);
+		this.add(lUserName);
+		this.add(lPassword);
+		this.add(lVorname);
+		this.add(lNachname);
+		this.add(lEMail);
 
-		f.add(userName);
-		f.add(password);
-		f.add(vorname);
-		f.add(nachname);
-		f.add(email);
+		this.add(userName);
+		this.add(password);
+		this.add(vorname);
+		this.add(nachname);
+		this.add(email);
 
-		f.add(title);
-		f.add(senden);
-		f.add(zurueck);
+		this.add(title);
+		this.add(senden);
+		this.add(zurueck);
 
-		f.add(fehler);
+		this.add(fehler);
 
-		f.setSize(410, 550);
-		f.setLayout(null);
-		f.setVisible(true);
+		this.setSize(410, 550);
+		this.setLayout(null);
+		this.setVisible(true);
 
 	}
 }

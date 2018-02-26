@@ -1,4 +1,4 @@
-package ch.bbcag.ch.user;
+package ch.bbcag.ch.persistance;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import ch.bbcag.ch.model.User;
 
 public class UserJDBCDao implements UserDao {
 

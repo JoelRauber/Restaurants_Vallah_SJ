@@ -1,4 +1,4 @@
-package ch.bbcag.ch.restaurant;
+package ch.bbcag.ch.model;
 
 public enum RestaurantType {
 	ASIATISCH, AFRIKANISCH, AMERIKANISCH, FRANZOESISCH, INDISCH, ITALIENISCH, SCHWEIZERISCH, SPANISCH, MEXIKANISCH, TUERKISCH

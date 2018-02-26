@@ -1,6 +1,8 @@
-package ch.bbcag.ch.user;
+package ch.bbcag.ch.persistance;
 
 import java.util.List;
+
+import ch.bbcag.ch.model.User;
 
 public interface UserDao {
 	public abstract List<User> getAllUsers();

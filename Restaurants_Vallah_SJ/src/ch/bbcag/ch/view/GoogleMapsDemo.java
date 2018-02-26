@@ -1,4 +1,4 @@
-package ch.bbcag.ch.gui;
+package ch.bbcag.ch.view;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package ch.bbcag.ch.restaurant;
+package ch.bbcag.ch.model;
 
 public class Restaurant {
 	private int id;
