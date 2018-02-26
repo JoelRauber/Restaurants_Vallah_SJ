@@ -193,7 +193,7 @@ public class MainGUI extends JFrame {
 					weiter.setBorder(null);
 					System.out.println("test2");
 					contentPanelSearch.add(weiter, BorderLayout.SOUTH);
-					weiter.addActionListener(new OpenDetails(this, restaurant.toString()));
+//					weiter.addActionListener(new OpenDetails(this, restaurant.toString()));
 					revalidate();
 				}
 				ConnectionFactory.getInstance().closeConnection();

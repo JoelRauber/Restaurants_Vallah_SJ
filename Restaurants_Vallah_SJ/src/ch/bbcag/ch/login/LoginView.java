@@ -46,7 +46,7 @@ public class LoginView extends JFrame {
 		lUserName = new JLabel("Username: ");
 		fehler = new JTextField();
 		title = new JLabel("Login");
-		senden = new JButton("Senden");
+		senden = new JButton("Login");
 		registrieren = new JButton("Registrieren");
 		u = new User();
 		con = ConnectionFactory.getInstance().getConnection();
