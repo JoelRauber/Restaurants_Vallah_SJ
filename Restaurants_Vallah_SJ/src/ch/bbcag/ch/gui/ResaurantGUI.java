@@ -2,11 +2,9 @@ package ch.bbcag.ch.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
@@ -14,20 +12,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-
-import ch.bbcag.ch.login.LoginView;
 
 public class ResaurantGUI extends JFrame {
 	/**
@@ -65,11 +60,7 @@ public class ResaurantGUI extends JFrame {
 			String longitude = "8.533135";
 
 			String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
-<<<<<<< HEAD
-					+ "&zoom=15&size=612x612&scale=2&maptype=roadmap";
-=======
 					+ "&zoom=14&size=612x612&scale=2&maptype=roadmap";
->>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 
 			String mapFile = "map.jpg";
 
@@ -122,15 +113,9 @@ public class ResaurantGUI extends JFrame {
 		subTitel.setEditable(false);
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
-<<<<<<< HEAD
 
-
-		
-//		add(info);
-=======
 		subTitel.setAlignmentX(CENTER_ALIGNMENT);
 		// add(info);
->>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 		add(titel, BorderLayout.NORTH);
 		// TODO: c für icon bearbeiten
 		c.gridx = 10;

@@ -89,21 +89,21 @@ public class MainGUI extends JFrame {
 			"<html><div style='text-align: Center;'>" + "Restaurants Vallah" + "</div></html>");
 	private JTextField text3 = new JTextField(
 			"Lorem ipsum dolor  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		MainGUI.m = new MainGUI();
-	}
-	
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		MainGUI.m = null;
-	}
-	
-	/**
-	 * Test {
-	 * @param args
-	 */
-	@Test
+//	@BeforeClass
+//	public static void setUpBeforeClass() throws Exception {
+//		MainGUI.m = new MainGUI();
+//	}
+//	
+//	@AfterClass
+//	public static void tearDownAfterClass() throws Exception {
+//		MainGUI.m = null;
+//	}
+//	
+//	/**
+//	 * Test {
+//	 * @param args
+//	 */
+//	@Test
 	public static void main(String[] args) {
 		MainGUI main = new MainGUI();
 		main.setSize(1600, 800);
