@@ -65,7 +65,11 @@ public class ResaurantGUI extends JFrame {
 			String longitude = "8.533135";
 
 			String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude
+<<<<<<< HEAD
+					+ "&zoom=15&size=612x612&scale=2&maptype=roadmap";
+=======
 					+ "&zoom=14&size=612x612&scale=2&maptype=roadmap";
+>>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 
 			String mapFile = "map.jpg";
 
@@ -118,8 +122,15 @@ public class ResaurantGUI extends JFrame {
 		subTitel.setEditable(false);
 		subTitel.setBackground(new Color(238, 238, 238));
 		subTitel.setBorder(null);
+<<<<<<< HEAD
+
+
+		
+//		add(info);
+=======
 		subTitel.setAlignmentX(CENTER_ALIGNMENT);
 		// add(info);
+>>>>>>> branch 'master' of https://github.com/JoelRauber/Restaurants_Vallah_SJ.git
 		add(titel, BorderLayout.NORTH);
 		// TODO: c für icon bearbeiten
 		c.gridx = 10;
