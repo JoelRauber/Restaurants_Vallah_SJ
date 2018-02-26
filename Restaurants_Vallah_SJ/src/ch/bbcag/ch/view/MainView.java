@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -14,8 +15,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+
 //import javax.swing.border.Border;
 //
 //import ch.bbc.ch.listener.OpenDetails;
@@ -65,7 +69,8 @@ public class MainView extends JFrame {
 	private JPanel contentPanelSpanisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelMexikanisch = new JPanel(new GridLayout(2, 3));
 	private JPanel contentPanelTuerkisch = new JPanel(new GridLayout(2, 3));
-	private JPanel contentPanelSearch = new JPanel(new GridLayout(3, 3));
+	private JPanel contentPanelSearch = new JPanel(new GridLayout(0, 3));
+	private JScrollPane contentSearch;
 
 	private JTextField asiatisch = new JTextField("--> Asiatisch");
 	private JTextField afrikanisch = new JTextField("--> Afrikanisch");
@@ -193,10 +198,10 @@ public class MainView extends JFrame {
 		
 		searchbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				contentPanelSearch.removeAll();
 				for (Restaurant restaurant : RESTAURANT_CONTROLLER.getAllBySearch(searchfield.getText())){
-					
-					System.out.println("test");
 					JButton weiter = new JButton();
+					System.out.println("test");
 					weiter.setText(
 							"<html><center><br><br><br><br><br><br><br>*******************************************<br><br>"
 									+ restaurant.getName() + "<br><br>" + restaurant.getLink() + " <br><br> "
@@ -210,7 +215,7 @@ public class MainView extends JFrame {
 //					weiter.addActionListener(new OpenDetails(this, restaurant.toString()));
 					revalidate();
 				}
-				ConnectionFactory.getInstance().closeConnection();
+//				ConnectionFactory.getInstance().closeConnection();
 			}
 		});
 		
@@ -328,7 +333,11 @@ public class MainView extends JFrame {
 		panelSearch.add(searchfield, BorderLayout.NORTH);
 //		panelSearch.add(searchdescription, BorderLayout.CENTER);
 		panelSearch2.add(searchbutton, BorderLayout.NORTH);
-
+		
+		contentSearch = new JScrollPane (contentPanelSearch, 
+                ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
 		panelAsiatisch.add(contentPanelAsiatisch, BorderLayout.CENTER);
 		panelAfrikanisch.add(contentPanelAfrikanisch, BorderLayout.CENTER);
 		panelAmerikanisch.add(contentPanelAmerikanisch, BorderLayout.CENTER);
@@ -339,7 +348,7 @@ public class MainView extends JFrame {
 		panelSpanisch.add(contentPanelSpanisch, BorderLayout.CENTER);
 		panelMexikanisch.add(contentPanelMexikanisch, BorderLayout.CENTER);
 		panelTuerkisch.add(contentPanelTuerkisch, BorderLayout.CENTER);
-		panelSearch2.add(contentPanelSearch, BorderLayout.CENTER);
+		panelSearch2.add(contentSearch, BorderLayout.CENTER);
 		panelSearch.add(panelSearch2, BorderLayout.CENTER);
 
 		panelHome.add(text3, BorderLayout.CENTER);

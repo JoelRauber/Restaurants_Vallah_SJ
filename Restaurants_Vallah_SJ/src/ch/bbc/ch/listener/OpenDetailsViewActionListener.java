@@ -16,6 +16,7 @@ public class OpenDetailsViewActionListener implements ActionListener{
 		this.restaurantInfo = restaurantInfo;
 	}
 	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		RestaurantView res = new RestaurantView(gui);
